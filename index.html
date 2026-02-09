@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gemini Gazette | AI Edition</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Chomsky&display=swap');
 
+        body {
+            background-color: #f4f1ea;
+            color: #1a1a1a;
+            font-family: 'Libre+Baskerville', serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 1px solid #333;
+            padding: 20px;
+            background-color: #fffefc;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Masthead */
+        header {
+            text-align: center;
+            border-bottom: 4px double #333;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif; /* Fallback for 'Chomsky' style */
+            font-size: 75px;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        .sub-header {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #333;
+            padding: 5px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Newspaper Columns */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        article {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .headline-main {
+            grid-column: span 2;
+            border-right: 1px solid #ccc;
+            padding-right: 20px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            line-height: 1.1;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+        }
+
+        .author {
+            font-style: italic;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .dropcap::first-letter {
+            float: left;
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-right: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Sidebar/Sections */
+        .sidebar {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .market-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .market-table td {
+            padding: 5px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .trend-up { color: green; font-weight: bold; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-content { grid-template-columns: 1fr; }
+            .headline-main { border-right: none; grid-column: span 1; }
+            header h1 { font-size: 45px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="sub-header">
+            <span>Vol. I ... No. 001</span>
+            <span>MONDAY, FEBRUARY 9, 2026</span>
+            <span>PRICE: $0.00 (Open Source)</span>
+        </div>
+        <h1>The Gemini Gazette</h1>
+        <div class="sub-header" style="border-bottom: 1px solid #333; border-top: none;">
+            <span>Silicon Valley Edition</span>
+            <span><i>"Your Daily Pulse on the Intelligence Revolution"</i></span>
+            <span>Weather: 18°C | Sunny</span>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="headline-main">
+            <article>
+                <h2>OpenAI Unveils 'Frontier' Agent Platform</h2>
+                <span class="author">By AI Correspondent Sarah Techington</span>
+                <p class="dropcap">In a move that industry experts are calling the "Agentic Inflection Point," OpenAI has officially launched <strong>Frontier</strong>. This massive platform is designed to move AI from simple chatbots to fully-realized digital coworkers.</p>
+                <p>Unlike previous iterations, Frontier allows enterprises to deploy long-lived agents that possess their own business context and permissions. Major firms like HP and Uber have already begun integrating these agents into their core infrastructure, allowing AI to handle complex, multi-step workflows without human intervention.</p>
+            </article>
+
+            <div style="display: flex; gap: 20px;">
+                <article style="flex: 1;">
+                    <h3>Takeda Strikes $1.7B AI Drug Deal</h3>
+                    <p>Japan’s largest pharmaceutical firm has partnered with Iambic Therapeutics to lead a massive hunt for cancer breakthroughs using predictive protein modeling.</p>
+                </article>
+                <article style="flex: 1;">
+                    <h3>Cybersecurity: AISURU Botnet</h3>
+                    <p>A record-breaking 31.4 Tbps DDoS attack was recorded today, signaling a dangerous shift in AI-powered infrastructure threats.</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="secondary-news">
+            <article>
+                <h3>EU Threatens Meta Over Bot Blocking</h3>
+                <p>The European Commission warned Meta today regarding antitrust concerns. They allege Meta is blocking rival AI bots from the WhatsApp API to protect its own ecosystem.</p>
+            </article>
+            <article>
+                <h3>English: The New "C++"</h3>
+                <p>New reports show that the bottleneck in software development is no longer coding syntax, but the ability to articulate goals clearly to LLMs.</p>
+            </article>
+        </div>
+
+        <div class="sidebar">
+            <h3>Market Watch</h3>
+            <table class="market-table">
+                <tr><td>NVIDIA (NVDA)</td><td class="trend-up">+2.4%</td></tr>
+                <tr><td>MICRON (MU)</td><td class="trend-up">+1.8%</td></tr>
+                <tr><td>AI ADOPTION</td><td>92%</td></tr>
+            </table>
+            <br>
+            <hr>
+            <h3>Editor's Note</h3>
+            <p><small>This repository is currently a clean slate. To evolve the Gazette, consider adding dynamic API hooks to pull live news from the Frontier network.</small></p>
+        </div>
+    </main>
+
+    <footer style="margin-top: 30px; border-top: 1px solid #333; padding-top: 10px; text-align: center; font-size: 0.8rem;">
+        &copy; 2026 rishabhbaral-asu/gemini-gazette • Built with Gemini 3 Flash
+    </footer>
+</div>
+
+</body>
+</html>

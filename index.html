@@ -7,56 +7,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     
     <style>
-        :root { --paper-color: #fdf6e3; --ink-color: #2c2c2c; --border-color: #444; }
+        :root { --paper-color: #fdf6e3; --ink-color: #2c2c2c; }
         body { background-color: #dedede; font-family: 'Merriweather', serif; color: var(--ink-color); margin: 0; padding: 20px; }
         
-        /* Layout & Paper Styling */
         .container {
             max-width: 1000px; margin: 0 auto; background: var(--paper-color);
             padding: 30px 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             border: 1px solid #d4cbb8;
         }
         
-        /* Header */
         header { text-align: center; border-bottom: 3px double var(--ink-color); margin-bottom: 25px; }
-        h1 {
-            font-family: 'Playfair Display', serif; font-size: 4.5rem; margin: 15px 0;
-            text-transform: uppercase; letter-spacing: -2px; line-height: 1;
-        }
+        h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin: 10px 0; text-transform: uppercase; line-height: 1; }
+        
         .sub-header {
             display: flex; justify-content: space-between; border-top: 2px solid var(--ink-color);
             border-bottom: 1px solid var(--ink-color); padding: 5px 0;
             font-family: sans-serif; font-size: 0.75rem; font-weight: bold; text-transform: uppercase;
         }
 
-        /* Grid */
-        .main-content { display: grid; grid-template-columns: 65% 30%; gap: 5%; align-items: start; }
+        .main-content { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
         
-        /* Typography */
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 0 0 10px 0; line-height: 1; }
-        h3 { font-family: sans-serif; font-size: 1rem; text-transform: uppercase; border-bottom: 2px solid black; margin-bottom: 10px; }
-        p { line-height: 1.6; font-size: 1rem; margin-bottom: 15px; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 0 0 10px 0; line-height: 1.1; }
+        .author { font-style: italic; color: #666; font-size: 0.9rem; margin-bottom: 15px; display: block; }
+        .dropcap::first-letter { font-family: 'Playfair Display', serif; font-size: 3.5rem; float: left; line-height: 0.8; padding-right: 8px; font-weight: 700; }
         
-        .author { font-style: italic; color: #666; font-size: 0.9rem; margin-bottom: 20px; display: block; }
-        .dropcap::first-letter { font-family: 'Playfair Display', serif; font-size: 3.8rem; float: left; line-height: 0.8; padding-right: 10px; font-weight: 700; }
-        .timestamp { font-family: sans-serif; font-size: 0.7rem; color: #888; }
-
-        /* Sidebar & Tables */
-        .sidebar { padding-left: 20px; border-left: 1px solid #ccc; height: 100%; }
+        .sidebar { padding-left: 20px; border-left: 1px solid #ccc; }
         .market-table { width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 0.85rem; }
         .market-table td { padding: 8px 0; border-bottom: 1px solid #ccc; }
-        .trend-up { color: #006400; font-weight: bold; }
-        .trend-down { color: #8b0000; font-weight: bold; }
+        
+        .status-ok { color: green; font-weight: bold; }
+        .status-err { color: red; font-weight: bold; }
 
-        /* Secondary Articles */
-        .secondary-news article { margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px; }
-        .secondary-news h4 { margin: 5px 0; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
-        .paper-tag { background: #333; color: #fff; padding: 2px 6px; font-size: 0.6rem; text-transform: uppercase; border-radius: 2px; }
-
-        /* Status Indicators */
-        .status-ok { color: green; }
-        .status-err { color: red; }
-        .loading-text { font-style: italic; color: #777; }
+        /* Mobile Fix */
+        @media (max-width: 700px) { .main-content { grid-template-columns: 1fr; } .sidebar { border-left: none; border-top: 1px solid #ccc; padding-top: 20px; padding-left: 0; } }
     </style>
 </head>
 <body>
@@ -71,82 +54,66 @@
         <h1>The Gemini Gazette</h1>
         <div class="sub-header" style="border-bottom: none; border-top: 1px solid black;">
             <span>Global Edition</span>
-            <span><i>"All the News That's Fit to Tokenize"</i></span>
+            <span><i>"Live Intelligence Feed"</i></span>
             <span>API Status: <span id="api-status">Connecting...</span></span>
         </div>
     </header>
 
     <main class="main-content">
         <section>
-            <article id="hero-article">
+            <article>
                 <h2 id="main-headline">Loading Global Wire...</h2>
                 <span class="author" id="main-author">By AI Correspondent</span>
                 <p class="dropcap" id="main-content">
-                    Connecting to NewsAPI satellites... If this takes too long, please check your API key configuration.
+                    Connecting to NewsAPI via Proxy...
                 </p>
-                <p class="timestamp" id="main-time"></p>
+                <p style="color: #666; font-size: 0.8rem;">
+                    <a id="read-more-link" href="#" target="_blank" style="color: inherit;">Read full story &rarr;</a>
+                </p>
             </article>
 
-            <hr style="margin: 40px 0; border: 0; border-top: 1px solid #333;">
+            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #333;">
 
             <div class="secondary-news">
-                <h3>Latest ArXiv Research (CS.AI)</h3>
-                <div id="papers-list">
-                    <p class="loading-text">Scanning preprint servers...</p>
-                </div>
+                <h3 style="font-family: sans-serif; text-transform: uppercase; border-bottom: 2px solid black;">Latest Research (ArXiv)</h3>
+                <div id="papers-list">Scanning preprint servers...</div>
             </div>
         </section>
 
         <aside class="sidebar">
-            <h3>Market Watch</h3>
+            <h3 style="font-family: sans-serif; text-transform: uppercase; border-bottom: 2px solid black;">Top Headlines</h3>
+            <div id="side-news-list">Fetching...</div>
+            
+            <br>
+            
+            <h3 style="font-family: sans-serif; text-transform: uppercase; border-bottom: 2px solid black;">Market Watch</h3>
             <table class="market-table">
-                <tr><td>NVIDIA (NVDA)</td><td class="trend-up">▲ 138.40</td></tr>
-                <tr><td>MICROSOFT (MSFT)</td><td class="trend-up">▲ 415.20</td></tr>
-                <tr><td>GOOGLE (GOOGL)</td><td class="trend-down">▼ 172.50</td></tr>
+                <tr><td>NVIDIA (NVDA)</td><td style="color:green">▲ 138.40</td></tr>
+                <tr><td>MICROSOFT (MSFT)</td><td style="color:green">▲ 415.20</td></tr>
             </table>
-            
-            <br><br>
-            
-            <h3>Top Headlines</h3>
-            <div id="side-news-list">
-                <p class="loading-text">Fetching shorts...</p>
-            </div>
-
-            <br><br>
-            <div style="background: #e8e8e8; padding: 15px; text-align: center; border: 1px solid #ccc;">
-                <h4>ADVERTISEMENT</h4>
-                <p style="font-size: 0.8rem; margin: 0;"><b>Need Compute?</b><br>Rent H100s today.<br><i>Call 555-GPU-NOW</i></p>
-            </div>
         </aside>
     </main>
 </div>
 
 <script>
-    // ==========================================
     // 1. CONFIGURATION
-    // ==========================================
+    const API_KEY = '02cd196b860e4d3e83a0535aa25569b3'; // Your Key
     
-    // !!! PASTE YOUR KEY BELOW !!!
-    const API_KEY = '02cd196b860e4d3e83a0535aa25569b3'; 
+    // We use a CORS Proxy to trick the browser into thinking we are a backend server
+    const PROXY_URL = "https://corsproxy.io/?url="; 
     
-    // We use a proxy to bypass the "No Browser Access" restriction of the free tier
-    const PROXY_URL = "https://corsproxy.io/?"; 
-    
-    // Set Date
-    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById('current-date').innerText = new Date().toLocaleDateString('en-US', dateOptions).toUpperCase();
+    document.getElementById('current-date').innerText = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase();
 
-    // ==========================================
-    // 2. FETCH REAL NEWS (NewsAPI)
-    // ==========================================
+    // 2. FETCH NEWS (WITH PROXY)
     async function fetchNews() {
         const statusSpan = document.getElementById('api-status');
         
-        // Query: Artificial Intelligence, sorted by newest
+        // This is the URL you visited, but we wrap it in the Proxy URL
         const targetUrl = `https://newsapi.org/v2/everything?q=artificial+intelligence&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
         
         try {
-            // Fetch via Proxy to avoid CORS errors
+            console.log("Fetching from:", PROXY_URL + encodeURIComponent(targetUrl));
+            
             const response = await fetch(PROXY_URL + encodeURIComponent(targetUrl));
             const data = await response.json();
 
@@ -159,50 +126,47 @@
             }
         } catch (error) {
             console.error(error);
-            statusSpan.innerText = "Error";
+            statusSpan.innerText = "Connection Failed";
             statusSpan.className = "status-err";
-            document.getElementById('main-headline').innerText = "API Error: Could not fetch news";
-            document.getElementById('main-content').innerHTML = `<b>Reason:</b> ${error.message}<br><br>Did you paste your API key in the code?`;
+            document.getElementById('main-headline').innerText = "System Failure";
+            document.getElementById('main-content').innerHTML = `
+                <b>Error:</b> ${error.message}<br><br>
+                <b>Why?</b> The free news proxy might be busy or NewsAPI is blocking the request.<br>
+                Try refreshing the page in 5 seconds.
+            `;
         }
     }
 
     function renderNews(articles) {
-        // 1. Render Main Hero Story (First Article)
+        // Main Story
         const main = articles[0];
         document.getElementById('main-headline').innerText = main.title;
-        document.getElementById('main-author').innerText = `By ${main.author || 'Editorial Staff'} • ${main.source.name}`;
+        document.getElementById('main-author').innerText = `By ${main.author || 'Staff'} • ${main.source.name}`;
+        document.getElementById('read-more-link').href = main.url;
         
-        // Clean up content (remove the [+chars] tag NewsAPI adds)
+        // Remove the [+123 chars] text
         let content = main.description || main.content || "Click to read full story...";
         content = content.replace(/\[\+\d+ chars\]/, ''); 
-        
         document.getElementById('main-content').innerText = content;
-        document.getElementById('main-time').innerText = new Date(main.publishedAt).toLocaleString();
 
-        // 2. Render Sidebar Headlines (Next 3 Articles)
+        // Sidebar Stories (Take next 4)
         const sideList = document.getElementById('side-news-list');
         let sideHtml = "";
-        
-        // Slice articles 1 to 4
-        articles.slice(1, 4).forEach(art => {
+        articles.slice(1, 5).forEach(art => {
             sideHtml += `
-                <div style="margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 5px;">
-                    <a href="${art.url}" target="_blank" style="text-decoration: none; color: inherit; font-weight: bold; font-family: 'Playfair Display', serif;">${art.title}</a>
+                <div style="margin-bottom: 12px; border-bottom: 1px dotted #ccc; padding-bottom: 5px;">
+                    <a href="${art.url}" target="_blank" style="text-decoration: none; color: inherit; font-weight: bold; font-family: 'Playfair Display', serif; font-size: 0.95rem;">${art.title}</a>
+                    <div style="font-size: 0.7rem; color: #888; margin-top: 3px;">${new Date(art.publishedAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
                 </div>
             `;
         });
         sideList.innerHTML = sideHtml;
     }
 
-    // ==========================================
-    // 3. FETCH REAL PAPERS (ArXiv API)
-    // ==========================================
+    // 3. FETCH PAPERS (ArXiv works without Proxy)
     async function fetchPapers() {
-        // ArXiv allows browser access (CORS enabled) so no proxy needed usually
-        const url = `https://export.arxiv.org/api/query?search_query=cat:cs.AI&start=0&max_results=3&sortBy=submittedDate&sortOrder=descending`;
-
         try {
-            const response = await fetch(url);
+            const response = await fetch(`https://export.arxiv.org/api/query?search_query=cat:cs.AI&start=0&max_results=3&sortBy=submittedDate&sortOrder=descending`);
             const text = await response.text();
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(text, "text/xml");
@@ -211,29 +175,22 @@
             let html = "";
             for (let i = 0; i < entries.length; i++) {
                 const title = entries[i].getElementsByTagName("title")[0].textContent;
-                const summary = entries[i].getElementsByTagName("summary")[0].textContent;
-                // Truncate summary
-                const shortSummary = summary.substring(0, 180) + "...";
-                
+                const summary = entries[i].getElementsByTagName("summary")[0].textContent.substring(0, 150) + "...";
                 html += `
-                    <article>
-                        <span class="paper-tag">New Preprint</span>
-                        <h4>${title}</h4>
-                        <p style="font-size: 0.9rem;">${shortSummary}</p>
-                    </article>
-                `;
+                    <div style="margin-bottom: 15px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;">
+                        <span style="background:#333; color:#fff; padding:2px 5px; font-size:0.6rem; text-transform:uppercase;">Preprint</span>
+                        <h4 style="margin:5px 0; font-family:'Playfair Display',serif;">${title}</h4>
+                        <p style="font-size:0.9rem; margin:0;">${summary}</p>
+                    </div>`;
             }
             document.getElementById('papers-list').innerHTML = html;
-
-        } catch (error) {
-            document.getElementById('papers-list').innerText = "Unable to reach ArXiv database.";
+        } catch (err) {
+            document.getElementById('papers-list').innerText = "ArXiv feed currently unavailable.";
         }
     }
 
-    // Run on Load
     fetchNews();
     fetchPapers();
-
 </script>
 
 </body>

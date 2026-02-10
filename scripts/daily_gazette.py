@@ -18,19 +18,51 @@ def fetch_news():
         return []
 
 def fetch_papers():
-    print("🔬 Fetching Papers...")
-    # ArXiv API (XML parsed manually for zero dependencies)
-    url = "http://export.arxiv.org/api/query?search_query=cat:cs.AI&start=0&max_results=3&sortBy=submittedDate&sortOrder=descending"
+    print("🔬 Fetching ArXiv Papers (AI + NLP)...")
+    
+    # query: (category: AI OR category: Computation & Language)
+    # sortBy: submittedDate (get the freshest preprints)
+    url = "http://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.CL&start=0&max_results=6&sortBy=submittedDate&sortOrder=descending"
+    
     try:
         response = requests.get(url)
         entries = response.text.split('<entry>')
         papers = []
+        
+        # Skip the first entry because it is metadata, not a paper
         for entry in entries[1:]:
-            title = entry.split('<title>')[1].split('</title>')[0].strip()
-            summary = entry.split('<summary>')[1].split('</summary>')[0].strip().replace('\n', ' ')[:200] + "..."
-            papers.append({'title': title, 'summary': summary})
+            # Extract Link
+            try:
+                link = entry.split('<id>')[1].split('</id>')[0].strip()
+            except:
+                link = "#"
+            
+            # Extract Title
+            try:
+                title = entry.split('<title>')[1].split('</title>')[0].strip()
+                # Clean up newlines in titles
+                title = title.replace('\n', ' ')
+            except:
+                title = "Unknown Title"
+            
+            # Extract Summary
+            try:
+                summary = entry.split('<summary>')[1].split('</summary>')[0].strip()
+                # Clean up newlines in summaries
+                summary = summary.replace('\n', ' ')
+            except:
+                summary = "No summary available."
+            
+            # Extract Category to show the user (e.g., "CS.CL")
+            # This is a bit tricky with XML splitting, but we can just label them "Preprint"
+            # or try to find the primary category tag if we want to be fancy.
+            # For now, we will stick to the basics.
+
+            papers.append({'title': title, 'summary': summary, 'link': link})
+            
         return papers
-    except:
+    except Exception as e:
+        print(f"Error fetching papers: {e}")
         return []
 
 def generate_html(articles, papers):

@@ -4,94 +4,149 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The Gemini Gazette</title>
+        <title>The Gemini Gazette | AI Edition</title>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
         <style>
-            :root { --paper: #fdf6e3; --ink: #2c2c2c; }
-            body { background: #dedede; font-family: 'Merriweather', serif; color: var(--ink); margin: 0; padding: 20px; }
-            .container { max-width: 1000px; margin: 0 auto; background: var(--paper); padding: 30px 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); border: 1px solid #d4cbb8; }
-            header { text-align: center; border-bottom: 3px double var(--ink); margin-bottom: 25px; }
-            h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin: 10px 0; text-transform: uppercase; line-height: 1; }
-            .meta { display: flex; justify-content: space-between; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 5px 0; font-family: sans-serif; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
-            .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
-            h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 0 0 10px 0; line-height: 1.1; }
-            .dropcap::first-letter { font-family: 'Playfair Display', serif; font-size: 3.5rem; float: left; line-height: 0.8; padding-right: 8px; font-weight: 700; }
-            @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+            :root { --paper: #fdf6e3; --ink: #2c2c2c; --accent: #8b0000; }
+            body { background: #e0e0e0; font-family: 'Merriweather', serif; color: var(--ink); margin: 0; padding: 20px; }
+            a { color: var(--accent); text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            
+            /* Newspaper Layout */
+            .container { max-width: 1100px; margin: 0 auto; background: var(--paper); padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.3); border: 1px solid #d4cbb8; }
+            
+            /* Header */
+            header { text-align: center; border-bottom: 4px double var(--ink); margin-bottom: 30px; padding-bottom: 10px; }
+            h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin: 10px 0; text-transform: uppercase; line-height: 0.9; }
+            .sub-header { display: flex; justify-content: space-between; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 8px 0; font-family: sans-serif; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+
+            /* Grid Layout */
+            .main-content { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+            
+            /* Main Story */
+            .hero-article h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0 0 15px 0; line-height: 1; }
+            .hero-article .meta { font-style: italic; color: #555; display: block; margin-bottom: 20px; }
+            .dropcap::first-letter { font-family: 'Playfair Display', serif; font-size: 4.5rem; float: left; line-height: 0.8; padding-right: 12px; font-weight: 700; color: var(--accent); }
+            .article-body p { line-height: 1.6; margin-bottom: 15px; text-align: justify; }
+
+            /* Sidebar */
+            .sidebar { border-left: 1px solid #ccc; padding-left: 30px; }
+            .sidebar h3 { font-family: sans-serif; text-transform: uppercase; border-bottom: 3px solid var(--ink); font-size: 1.1rem; margin-bottom: 20px; }
+            
+            /* Components */
+            .side-article { margin-bottom: 30px; border-bottom: 1px dotted #999; padding-bottom: 20px; }
+            .side-article h4 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0 0 5px 0; }
+            .paper { margin-bottom: 25px; background: rgba(0,0,0,0.03); padding: 15px; border-radius: 4px; }
+            .paper h4 { margin: 5px 0; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+            .paper-tag { font-family: sans-serif; font-size: 0.6rem; background: var(--ink); color: #fff; padding: 2px 6px; text-transform: uppercase; }
+            
+            .read-link { font-family: sans-serif; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; display: inline-block; margin-top: 10px; }
+
+            /* Mobile */
+            @media (max-width: 800px) { .main-content { grid-template-columns: 1fr; } .sidebar { border-left: none; border-top: 4px double var(--ink); padding-left: 0; padding-top: 30px; margin-top: 30px; } h1 { font-size: 3rem; } }
         </style>
     </head>
     <body>
     <div class="container">
         <header>
-            <div class="meta"><span>Vol. 1</span><span>TUESDAY, FEBRUARY 10, 2026</span><span>GitHub Actions Edition</span></div>
+            <div class="sub-header">
+                <span>Vol. 1</span>
+                <span>TUESDAY, FEBRUARY 10, 2026</span>
+                <span>FREE EDITION</span>
+            </div>
             <h1>The Gemini Gazette</h1>
-            <div class="meta" style="border-bottom: none; border-top: 1px solid black;"><span>Global Edition</span><span>"Live Intelligence"</span><span>Status: ONLINE</span></div>
+            <div class="sub-header" style="border-bottom: none; border-top: 1px solid black;">
+                <span>AI Special Edition</span>
+                <span>"Read All About It"</span>
+                <span>Status: GENERATED</span>
+            </div>
         </header>
-        <div class="grid">
+
+        <main class="main-content">
             <section>
-                <article>
+                <article class="hero-article">
                     <h2>China Digital Exports Surge As Alibaba, Tencent Lead Global Push</h2>
-                    <span style="font-style:italic; color:#666;">By list.metadata.agency</span>
-                    <p class="dropcap">Chinese revenue from digital services sold abroad is soaring as tech champions from ByteDance Ltd. to Tencent Holdings Ltd. ramp up their overseas push in live streaming, e-commerce and artificial intelligence.</p>
-                    <p><a href="https://www.livemint.com/companies/china-digital-exports-surge-as-alibaba-tencent-lead-global-push-11770604320723.html" target="_blank">Read Full Story &rarr;</a></p>
+                    <span class="meta">By list.metadata.agency • Livemint</span>
+                    
+                    <div class="article-body dropcap">
+                        <p>Chinese revenue from digital services sold abroad is soaring as tech champions from ByteDance Ltd. to Tencent Holdings Ltd. ramp up their overseas push in live streaming, e-commerce and artificial intelligence.</p><p>The trade surplus from digital services, which encompasses a wide scope of businesses from telecom operations to cloud computing, more than doubled in 2025 to a record $33 billion, data from the State Administration of Foreign Exchange show. The category of telecom, computer and information services, which includes AI, expanded close to 30% last year, according to Bloomberg’s calculations off balance of payments data.</p><p>The increase underscores a growing urgency in seeking growth beyond the world’s second-largest economy, where intense domestic competition and lackluster demand are weighing on profitability.</p><p>Alibaba Group Holding Ltd., Tencent and ByteDance account for the lion’s share of China’s digital exports, operating in e-commerce, gaming and social networking via household names such as Lazada and TikTok. US export restrictions on high-end chips have driven China’s AI developers to build overseas data centers for easier access to more advanced technology.</p><p>Alibaba and its rivals operate vast computing platforms that serve mainly Chinese firms’ international operations. Tencent’s cloud facilities span Silicon Valley to Riyadh and Singapore, supporting services such as video conferencing and gaming. And ByteDance’s TikTok is building a $38 billion AI-related data center in Brazil, the company’s latest push in South America after years of gradual expansion in Europe, the US and Southeast Asia.</p><p>Overseas growth by Chinese electric vehicle, renewable energy and manufacturing companies further increases the need for digital services abroad. Such companies require processing and storing of data offshore, boosting demand for Chinese cloud providers including state-backed telecom operators, Huawei Technologies Co., Alibaba and Tencent.</p><p>SAFE’s data — which doesn’t break down company-level detail — covers cross-border money transactions between domestic and overseas firms, and doesn’t include income that isn’t remitted back to the country. A net surplus reflects net inflows.</p><p>China’s overall trade surplus rose to a record $1.2 trillion in 2025 thanks to a rapid increase in exports. But the country’s services trade had been in deficit for years. Beijing has vowed to find ways to help Chinese companies export services, including digital and AI-powered offerings.</p><p>Software and data is one of the few strong suits for China. The country is the world’s fourth-largest provider of telecom, computer and information services, according to the International Monetary Fund classification covering cross-border activities such as data transmission, cloud computing and software development. India ranks first in the category, underpinned by its vast software outsourcing industry.</p><p>This article was generated from an automated news agency feed without modifications to text.</p><p>Catch all the Business News ,  Corporate news , Breaking News Events and Latest News  Updates on Live Mint. Download The Mint News App  to get Daily Market Updates.</p>
+                    </div>
                 </article>
-                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #333;">
-                <h3>Latest Papers</h3>
-                
-        <article style="margin-bottom: 15px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;">
-            <span class="paper-tag" style="background: #333; color: #fff; padding: 2px 6px; font-size: 0.6rem;">CS.AI</span>
-            <h4 style="margin: 5px 0;">Rethinking Latency Denial-of-Service: Attacking the LLM Serving Framework, Not the Model</h4>
-            <p style="font-size: 0.9rem;">Large Language Models face an emerging and critical threat known as latency attacks. Because LLM inference is inherently expensive, even modest slowdowns can translate into substantial operating costs...</p>
+
+                <br><br>
+                <div style="border-top: 4px double var(--ink); padding-top: 20px;">
+                    <h3 style="font-family: sans-serif; text-transform: uppercase;">Latest Research Papers</h3>
+                    
+        <article class="paper">
+            <span class="paper-tag">CS.AI Research</span>
+            <h4><a href="http://arxiv.org/abs/2602.07878v1" target="_blank">Rethinking Latency Denial-of-Service: Attacking the LLM Serving Framework, Not the Model</a></h4>
+            <p>Large Language Models face an emerging and critical threat known as latency attacks. Because LLM inference is inherently expensive, even modest slowdowns can translate into substantial operating costs and severe availability risks. Recently, a growin...</p>
+            <a href="http://arxiv.org/abs/2602.07878v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
         </article>
         
-        <article style="margin-bottom: 15px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;">
-            <span class="paper-tag" style="background: #333; color: #fff; padding: 2px 6px; font-size: 0.6rem;">CS.AI</span>
-            <h4 style="margin: 5px 0;">Direct Soft-Policy Sampling via Langevin Dynamics</h4>
-            <p style="font-size: 0.9rem;">Soft policies in reinforcement learning define policies as Boltzmann distributions over state-action value functions, providing a principled mechanism for balancing exploration and exploitation. Howev...</p>
+        <article class="paper">
+            <span class="paper-tag">CS.AI Research</span>
+            <h4><a href="http://arxiv.org/abs/2602.07873v1" target="_blank">Direct Soft-Policy Sampling via Langevin Dynamics</a></h4>
+            <p>Soft policies in reinforcement learning define policies as Boltzmann distributions over state-action value functions, providing a principled mechanism for balancing exploration and exploitation. However, realizing such soft policies in practice remai...</p>
+            <a href="http://arxiv.org/abs/2602.07873v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
         </article>
         
-        <article style="margin-bottom: 15px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;">
-            <span class="paper-tag" style="background: #333; color: #fff; padding: 2px 6px; font-size: 0.6rem;">CS.AI</span>
-            <h4 style="margin: 5px 0;">Orchestrating Attention: Bringing Harmony to the 'Chaos' of Neurodivergent Learning States</h4>
-            <p style="font-size: 0.9rem;">Adaptive learning systems optimize content delivery based on performance metrics but ignore the dynamic attention fluctuations that characterize neurodivergent learners. We present AttentionGuard, a f...</p>
+        <article class="paper">
+            <span class="paper-tag">CS.AI Research</span>
+            <h4><a href="http://arxiv.org/abs/2602.07865v1" target="_blank">Orchestrating Attention: Bringing Harmony to the 'Chaos' of Neurodivergent Learning States</a></h4>
+            <p>Adaptive learning systems optimize content delivery based on performance metrics but ignore the dynamic attention fluctuations that characterize neurodivergent learners. We present AttentionGuard, a framework that detects engagement-attention states ...</p>
+            <a href="http://arxiv.org/abs/2602.07865v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
         </article>
         
+        <article class="paper">
+            <span class="paper-tag">CS.AI Research</span>
+            <h4><a href="http://arxiv.org/abs/2602.07852v1" target="_blank">Emergent Misalignment is Easy, Narrow Misalignment is Hard</a></h4>
+            <p>Finetuning large language models on narrowly harmful datasets can cause them to become emergently misaligned, giving stereotypically `evil' responses across diverse unrelated settings. Concerningly, a pre-registered survey of experts failed to predic...</p>
+            <a href="http://arxiv.org/abs/2602.07852v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
+        </article>
+        
+        <article class="paper">
+            <span class="paper-tag">CS.AI Research</span>
+            <h4><a href="http://arxiv.org/abs/2602.07849v1" target="_blank">LQA: A Lightweight Quantized-Adaptive Framework for Vision-Language Models on the Edge</a></h4>
+            <p>Deploying Vision-Language Models (VLMs) on edge devices is challenged by resource constraints and performance degradation under distribution shifts. While test-time adaptation (TTA) can counteract such shifts, existing methods are too resource-intens...</p>
+            <a href="http://arxiv.org/abs/2602.07849v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
+        </article>
+        
+        <article class="paper">
+            <span class="paper-tag">CS.AI Research</span>
+            <h4><a href="http://arxiv.org/abs/2602.07842v1" target="_blank">Evaluating and Calibrating LLM Confidence on Questions with Multiple Correct Answers</a></h4>
+            <p>Confidence calibration is essential for making large language models (LLMs) reliable, yet existing training-free methods have been primarily studied under single-answer question answering. In this paper, we show that these methods break down in the p...</p>
+            <a href="http://arxiv.org/abs/2602.07842v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
+        </article>
+        
+                </div>
             </section>
-            <aside style="border-left: 1px solid #ccc; padding-left: 20px;">
-                <h3 style="font-family:sans-serif; text-transform:uppercase; border-bottom:2px solid black;">Headlines</h3>
+
+            <aside class="sidebar">
+                <h3>More Headlines</h3>
                 
-        <div style="margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 5px;">
-            <a href="https://financialpost.com/pmn/business-pmn/china-digital-exports-surge-as-alibaba-tencent-lead-global-push" target="_blank" style="text-decoration: none; color: inherit; font-weight: bold; font-family: 'Playfair Display', serif;">
-                China Digital Exports Surge As Alibaba, Tencent Lead Global Push
-            </a>
-            <div style="font-size: 0.7rem; color: #888; margin-top:2px;">Financial Post</div>
+        <div class="side-article">
+            <h4>China Digital Exports Surge As Alibaba, Tencent Lead Global Push</h4>
+            <span class="meta-tag">Financial Post</span>
+            <div class="article-body"><p>Chinese revenue from digital services sold abroad is soaring as tech champions from ByteDance Ltd. to Tencent Holdings Ltd. ramp up their overseas push in live streaming, e-commerce and artificial intelligence.</p><p>You can save this article by registering for free here. Or sign-in if you have an account.</p><p>(Bloomberg) — Chinese revenue from digital services sold abroad is soaring as tech ...</div>
+            <a href="https://financialpost.com/pmn/business-pmn/china-digital-exports-surge-as-alibaba-tencent-lead-global-push" target="_blank" class="read-link">Read Original Source</a>
         </div>
         
-        <div style="margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 5px;">
-            <a href="https://www.kiro7.com/news/business/super-bowl-ads-try/4I7MB6V6PU7ZBFFEUASGUEX2P4/" target="_blank" style="text-decoration: none; color: inherit; font-weight: bold; font-family: 'Playfair Display', serif;">
-                Super Bowl ads try to overcome tough times with health, caring and the usual laughs
-            </a>
-            <div style="font-size: 0.7rem; color: #888; margin-top:2px;">KIRO Seattle</div>
+        <div class="side-article">
+            <h4>Super Bowl ads try to overcome tough times with health, caring and the usual laughs</h4>
+            <span class="meta-tag">KIRO Seattle</span>
+            <div class="article-body"><p>At a difficult time for America, Super Bowl advertisers asked viewers to take care of themselves and others — and maybe even crack a smile.</p><p>Ring showed how neighbors can use their doorbell cameras to find lost pets. A Budweiser Clydesdale protected a bald eagle chick from the rain. Novartis touted a blood test that can detect prostate cancer. Toyota reminded viewers to wear their seatbelt...</div>
+            <a href="https://www.kiro7.com/news/business/super-bowl-ads-try/4I7MB6V6PU7ZBFFEUASGUEX2P4/" target="_blank" class="read-link">Read Original Source</a>
         </div>
         
-        <div style="margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 5px;">
-            <a href="https://www.cnbc.com/2026/02/09/tech-leaders-epstein-records-silicon-valley-sergey-brin-thiel-sinofsky-reid-hoffman-musk-gates.html" target="_blank" style="text-decoration: none; color: inherit; font-weight: bold; font-family: 'Playfair Display', serif;">
-                Epstein's Silicon Valley connections went beyond Gates and Musk
-            </a>
-            <div style="font-size: 0.7rem; color: #888; margin-top:2px;">CNBC</div>
-        </div>
-        
-        <div style="margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 5px;">
-            <a href="https://economictimes.indiatimes.com/markets/ipos/fpos/fractal-analytics-ipo-check-gmp-brokerages-review-subscription-and-other-details/articleshow/128093230.cms" target="_blank" style="text-decoration: none; color: inherit; font-weight: bold; font-family: 'Playfair Display', serif;">
-                Fractal Analytics IPO: Check GMP, brokerages review, subscription and other details
-            </a>
-            <div style="font-size: 0.7rem; color: #888; margin-top:2px;">The Times of India</div>
-        </div>
-        
-                <br>
-                <h3 style="font-family:sans-serif; text-transform:uppercase; border-bottom:2px solid black;">Market</h3>
-                <p><b>NVIDIA:</b> ▲ Bullish<br><b>OPENAI:</b> ▲ Shipping</p>
+                
+                <div style="background: var(--ink); color: #fff; padding: 20px; text-align: center; margin-top: 40px;">
+                    <p style="font-family: sans-serif; text-transform: uppercase; font-weight: bold; margin-bottom: 5px;">Weather</p>
+                    <p style="font-size: 2rem; margin: 0; font-family: 'Playfair Display', serif;">72°F</p>
+                    <p>Sunny in the Server Room</p>
+                </div>
             </aside>
-        </div>
+        </main>
     </div>
     </body>
     </html>

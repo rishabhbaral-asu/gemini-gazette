@@ -2,17 +2,25 @@ name: Daily Gazette Printer
 
 on:
   schedule:
-    - cron: '0 12 * * *' 
+    - cron: '0 12 * * *' # Runs every day at 12:00 UTC
   workflow_dispatch:
 
-# Essential permissions for direct deployment
+# REQUIRED: Permissions for the token to deploy
 permissions:
   contents: write
   pages: write
   id-token: write
 
+# Prevent multiple deployments from overlapping
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build_and_deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -31,8 +39,7 @@ jobs:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: python scripts/daily_gazette.py
 
-      # Step A: Save the update back to your repository (History)
-      - name: Commit and Push
+      - name: Commit and Push Updated Index
         run: |
           git config --global user.name 'GeminiBot'
           git config --global user.email 'bot@noreply.github.com'
@@ -40,12 +47,13 @@ jobs:
           git commit -m "Extra! Extra! Fresh Ink!" || exit 0
           git push origin main --force
 
-      # Step B: Explicitly tell GitHub to put this file live
+      # NEW: This "uploads" the folder to GitHub's staging area
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'  # Uploads the folder containing your new index.html
+          path: '.' # Serves everything in your root folder (including index.html)
 
+      # NEW: This officially pushes it to the live web server
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4  # <--- Added beautifulsoup4 here
+          pip install requests beautifulsoup4 newspaper3k lxml_html_clean
 
       - name: Generate Newspaper
         env:

@@ -3,173 +3,96 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The Gemini Gazette | AI Edition</title>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+        <title>The Gemini Gazette | Live AI Feed</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
         <style>
-            :root { --paper: #fdf6e3; --ink: #2c2c2c; --accent: #8b0000; }
-            body { background: #e0e0e0; font-family: 'Merriweather', serif; color: var(--ink); margin: 0; padding: 20px; }
-            a { color: var(--accent); text-decoration: none; }
-            a:hover { text-decoration: underline; }
-            
-            /* Newspaper Layout */
-            .container { max-width: 1100px; margin: 0 auto; background: var(--paper); padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.3); border: 1px solid #d4cbb8; }
-            
-            /* Header */
-            header { text-align: center; border-bottom: 4px double var(--ink); margin-bottom: 30px; padding-bottom: 10px; }
-            h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin: 10px 0; text-transform: uppercase; line-height: 0.9; }
-            .sub-header { display: flex; justify-content: space-between; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 8px 0; font-family: sans-serif; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
-
-            /* Grid Layout */
+            :root { --paper: #fdf6e3; --ink: #2c2c2c; --accent: #8b0000; --ai: #1a5f7a; --nlp: #6b4c9a; }
+            body { background: #e0e0e0; font-family: 'Merriweather', serif; color: var(--ink); margin: 0; padding: 20px; line-height: 1.6; }
+            .container { max-width: 1100px; margin: 0 auto; background: var(--paper); padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.2); border: 1px solid #d4cbb8; }
+            header { text-align: center; border-bottom: 4px double var(--ink); margin-bottom: 30px; }
+            h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin: 10px 0; text-transform: uppercase; }
+            .sub-header { display: flex; justify-content: space-between; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 8px 0; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
             .main-content { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
-            
-            /* Main Story */
-            .hero-article h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0 0 15px 0; line-height: 1; }
-            .hero-article .meta { font-style: italic; color: #555; display: block; margin-bottom: 20px; }
-            .dropcap::first-letter { font-family: 'Playfair Display', serif; font-size: 4.5rem; float: left; line-height: 0.8; padding-right: 12px; font-weight: 700; color: var(--accent); }
-            .article-body p { line-height: 1.6; margin-bottom: 15px; text-align: justify; }
-
-            /* Sidebar */
-            .sidebar { border-left: 1px solid #ccc; padding-left: 30px; }
-            .sidebar h3 { font-family: sans-serif; text-transform: uppercase; border-bottom: 3px solid var(--ink); font-size: 1.1rem; margin-bottom: 20px; }
-            
-            /* Components */
-            .side-article { margin-bottom: 30px; border-bottom: 1px dotted #999; padding-bottom: 20px; }
-            .side-article h4 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0 0 5px 0; }
-            .paper { margin-bottom: 25px; background: rgba(0,0,0,0.03); padding: 15px; border-radius: 4px; }
-            .paper h4 { margin: 5px 0; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
-            .paper-tag { font-family: sans-serif; font-size: 0.6rem; background: var(--ink); color: #fff; padding: 2px 6px; text-transform: uppercase; }
-            
-            .read-link { font-family: sans-serif; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; display: inline-block; margin-top: 10px; }
-
-            /* Mobile */
-            @media (max-width: 800px) { .main-content { grid-template-columns: 1fr; } .sidebar { border-left: none; border-top: 4px double var(--ink); padding-left: 0; padding-top: 30px; margin-top: 30px; } h1 { font-size: 3rem; } }
+            .hero-article h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1.1; margin-top: 0; }
+            .dropcap::first-letter { font-family: 'Playfair Display', serif; font-size: 4rem; float: left; line-height: 0.8; padding-right: 10px; font-weight: 900; color: var(--accent); }
+            .paper-tag { font-family: sans-serif; font-size: 0.65rem; padding: 3px 8px; color: white; border-radius: 2px; }
+            .tag-ai { background: var(--ai); } .tag-nlp { background: var(--nlp); }
+            .side-article { border-bottom: 1px dotted #999; padding-bottom: 15px; margin-bottom: 20px; }
+            a { color: var(--accent); text-decoration: none; }
+            @media (max-width: 800px) { .main-content { grid-template-columns: 1fr; } }
         </style>
     </head>
     <body>
-    <div class="container">
-        <header>
-            <div class="sub-header">
-                <span>Vol. 1</span>
-                <span>TUESDAY, FEBRUARY 10, 2026</span>
-                <span>FREE EDITION</span>
-            </div>
-            <h1>The Gemini Gazette</h1>
-            <div class="sub-header" style="border-bottom: none; border-top: 1px solid black;">
-                <span>AI Special Edition</span>
-                <span>"Read All About It"</span>
-                <span>Status: GENERATED</span>
-            </div>
-        </header>
-
-        <main class="main-content">
-            <section>
-                <article class="hero-article">
-                    <h2>AI-powered apps and bots are barging into medicine. Doctors have questions.</h2>
-                    <span class="meta">By Reuters • The Times of India</span>
-                    
-                    <div class="article-body dropcap">
-                        <p>Artificial intelligence is entering healthcare, offering advice to patients. However, AI apps are sometimes providing incorrect medical information. Doctors express concerns about AI's accuracy and potential to cause harm. Regulatory bodies allow AI for patie…</p><p><i>(Full content protected. Click source to read more.)</i></p>
-                    </div>
-                </article>
-
-                <br><br>
-                <div style="border-top: 4px double var(--ink); padding-top: 20px;">
-                    <h3 style="font-family: sans-serif; text-transform: uppercase;">Latest Research Papers</h3>
-                    
+        <div class="container">
+            <header>
+                <div class="sub-header"><span>VOL. II</span><span>TUESDAY, FEBRUARY 10, 2026</span><span>LIVE AI EDITION</span></div>
+                <h1>The Gemini Gazette</h1>
+            </header>
+            <main class="main-content">
+                <section>
+                    <article class="hero-article">
+                        <h2>WSL and women’s clubs monitoring X’s Grok over generation of sexualised images</h2>
+                        <div class="article-body dropcap"><p>Women’s Super League (WSL) Football, the organisation which oversees the top two tiers of women’s football in England, is monitoring developments with X’s artificial intelligence (AI) tool Grok due to concerns regarding its creation of sexualised images.</p><p>Some WSL clubs are also monitoring Grok, and another has said it has provided updated guidance to players and staff on safe use of all platforms, including X. Other teams are monitoring the evolving social media landscape and will take action accordingly.</p><p>Social media company X, owned by billionaire Elon Musk, in January prevented Grok from being used to edit images of real people in revealing clothing after OFCOM, the UK’s independent regulator for the communications industries, launched an investigation in January. It follows concerns the AI tool was being used to create sexualised images, affecting women and children, including female athletes.</p><p>Signify, an organisation that works across multiple sports and with several WSL clubs to collect, triage and assess the threat online abuse poses to players, says it has been active on the Grok AI image manipulation issue since it first started in late 2025 and has shared advice with WSL and Premier League clubs on how to mitigate harm. But even though X has taken action, the issue is bigger than X and Grok.</p><p>“Similar off-platform image manipulation tools are available and we have seen them also being used to produce concerning images and videos,” Jonathan Sebire, co-founder at Signify, says. “This will be a live issue for some time to come.”</p><p>OFCOM is not currently investigating the off-platform stand-alone version of Grok because they do not fall under the Online Safety Act in the same way as on-platform versions.</p><p>An OFCOM spokesperson told The Athletic: “We can only take action on online harms covered by the Online Safety Act, using the powers we have been granted. Any changes to these powers would be a matter for government and parliament. The Secretary of State has said that the Government will look at how AI services should be regulated and we are supporting that work.”</p><p>Signify has since added a solution which specifically detects manipulated images and reports them to X for action. “Encouragingly, we have seen the platform take strong action when dealing with content,” Sebire added.</p><p>In January, the European Commission announced it was launching an investigation against X under the Digital Services Act over Grok, including “the dissemination of illegal content in the EU, such as manipulated sexually explicit images”.</p><p>In January, Arsenal deleted a video on X and turned comments off on an Instagram post of new signing Smilla Holmberg promoting ticket sales because of inappropriate, sexualised and misogynistic comments.</p><p>Tottenham Hotspur also turned comments off on their X post announcing the arrival of Matilda Nilden, 19, for the same reason. Some of the replies asked X’s artificial intelligence tool Grok to produce sexualised images of the player.</p><p>“It is really worrying,” Fern Whelan, women’s football equality, diversity and inclusion executive for the Professional Footballers’ Association, told The Athletic in a special investigation. “It’s difficult to manage unless it is stopped at source.”</p><p>The public body Sport England decided to stop using X last month to stay true to its values of ensuring “sport and physical activity are safe and inclusive for everyone,” it said in a statement.</p><p>WSL Football has already scaled back on the use of X, prioritising Instagram and TikTok instead and continues to monitor the situation regarding Grok.</p><p>“Online abuse is one of our highest priorities at the moment,” WSL Football Nikki Doucet told the media last month, urging the need to be proactive. “We have seen the speed in which and the change in the type of abuse that is happening. Some content is not illegal but there is a lot that is awful but lawful.”</p></div>
+                    </article>
+                    <div style="border-top: 4px double var(--ink); padding-top: 20px; margin-top: 40px;">
+                        <h3 style="text-transform: uppercase; font-family: sans-serif;">ArXiv Research Wire</h3>
+                        
         <article class="paper">
-            <span class="paper-tag">CS.AI Research</span>
+            <span class="paper-tag tag-ai">AI RESEARCH</span>
             <h4><a href="http://arxiv.org/abs/2602.09018v1" target="_blank">Robustness Is a Function, Not a Number: A Factorized Comprehensive Study of OOD Robustness in Vision-Based Driving</a></h4>
-            <p>Out of distribution (OOD) robustness in autonomous driving is often reduced to a single number, hiding what breaks a policy. We decompose environments along five axes: scene (rural/urban), season, weather, time (day/night), and agent mix; and measure...</p>
-            <a href="http://arxiv.org/abs/2602.09018v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
+            <p>Out of distribution (OOD) robustness in autonomous driving is often reduced to a single number, hiding what breaks a policy. We decompose environments along five axes: scene (rural/urban), season, weather, time (day/night), and agent mix; and measure performance under controlled $k$-factor perturbat...</p>
         </article>
-        
         <article class="paper">
-            <span class="paper-tag">CS.AI Research</span>
+            <span class="paper-tag tag-ai">AI RESEARCH</span>
             <h4><a href="http://arxiv.org/abs/2602.09015v1" target="_blank">CIC-Trap4Phish: A Unified Multi-Format Dataset for Phishing and Quishing Attachment Detection</a></h4>
-            <p>Phishing attacks represents one of the primary attack methods which is used by cyber attackers. In many cases, attackers use deceptive emails along with malicious attachments to trick users into giving away sensitive information or installing malware...</p>
-            <a href="http://arxiv.org/abs/2602.09015v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
+            <p>Phishing attacks represents one of the primary attack methods which is used by cyber attackers. In many cases, attackers use deceptive emails along with malicious attachments to trick users into giving away sensitive information or installing malware while compromising entire systems. The flexibilit...</p>
         </article>
-        
         <article class="paper">
-            <span class="paper-tag">CS.AI Research</span>
+            <span class="paper-tag tag-ai">AI RESEARCH</span>
             <h4><a href="http://arxiv.org/abs/2602.09014v1" target="_blank">ArcFlow: Unleashing 2-Step Text-to-Image Generation via High-Precision Non-Linear Flow Distillation</a></h4>
-            <p>Diffusion models have achieved remarkable generation quality, but they suffer from significant inference cost due to their reliance on multiple sequential denoising steps, motivating recent efforts to distill this inference process into a few-step re...</p>
-            <a href="http://arxiv.org/abs/2602.09014v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
+            <p>Diffusion models have achieved remarkable generation quality, but they suffer from significant inference cost due to their reliance on multiple sequential denoising steps, motivating recent efforts to distill this inference process into a few-step regime. However, existing distillation methods typic...</p>
         </article>
-        
         <article class="paper">
-            <span class="paper-tag">CS.AI Research</span>
+            <span class="paper-tag tag-ai">AI RESEARCH</span>
             <h4><a href="http://arxiv.org/abs/2602.09012v1" target="_blank">Next-Gen CAPTCHAs: Leveraging the Cognitive Gap for Scalable and Diverse GUI-Agent Defense</a></h4>
-            <p>The rapid evolution of GUI-enabled agents has rendered traditional CAPTCHAs obsolete. While previous benchmarks like OpenCaptchaWorld established a baseline for evaluating multimodal agents, recent advancements in reasoning-heavy models, such as Gemi...</p>
-            <a href="http://arxiv.org/abs/2602.09012v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
+            <p>The rapid evolution of GUI-enabled agents has rendered traditional CAPTCHAs obsolete. While previous benchmarks like OpenCaptchaWorld established a baseline for evaluating multimodal agents, recent advancements in reasoning-heavy models, such as Gemini3-Pro-High and GPT-5.2-Xhigh have effectively co...</p>
         </article>
-        
         <article class="paper">
-            <span class="paper-tag">CS.AI Research</span>
+            <span class="paper-tag tag-ai">AI RESEARCH</span>
             <h4><a href="http://arxiv.org/abs/2602.09009v1" target="_blank">ANCRe: Adaptive Neural Connection Reassignment for Efficient Depth Scaling</a></h4>
-            <p>Scaling network depth has been a central driver behind the success of modern foundation models, yet recent investigations suggest that deep layers are often underutilized. This paper revisits the default mechanism for deepening neural networks, namel...</p>
-            <a href="http://arxiv.org/abs/2602.09009v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
+            <p>Scaling network depth has been a central driver behind the success of modern foundation models, yet recent investigations suggest that deep layers are often underutilized. This paper revisits the default mechanism for deepening neural networks, namely residual connections, from an optimization persp...</p>
         </article>
-        
         <article class="paper">
-            <span class="paper-tag">CS.AI Research</span>
+            <span class="paper-tag tag-ai">AI RESEARCH</span>
             <h4><a href="http://arxiv.org/abs/2602.09007v1" target="_blank">GEBench: Benchmarking Image Generation Models as GUI Environments</a></h4>
-            <p>Recent advancements in image generation models have enabled the prediction of future Graphical User Interface (GUI) states based on user instructions. However, existing benchmarks primarily focus on general domain visual fidelity, leaving the evaluat...</p>
-            <a href="http://arxiv.org/abs/2602.09007v1" target="_blank" class="read-link">View on ArXiv &rarr;</a>
+            <p>Recent advancements in image generation models have enabled the prediction of future Graphical User Interface (GUI) states based on user instructions. However, existing benchmarks primarily focus on general domain visual fidelity, leaving the evaluation of state transitions and temporal coherence in...</p>
         </article>
-        
-                </div>
-            </section>
-
-            <aside class="sidebar">
-                <h3>More Headlines</h3>
-                
+                    </div>
+                </section>
+                <aside class="sidebar">
+                    <h3 style="border-bottom: 3px solid var(--ink); text-transform: uppercase;">Latest Headlines</h3>
+                    
         <div class="side-article">
-            <h4>Reliance Global Group Signs Definitive Agreement to Acquire Controlling Stake in Post-Quantum Cybersecurity Company Enquantum</h4>
-            <span class="meta-tag">GlobeNewswire</span>
-            <div class="article-body"><p>February 09, 2026 08:07 ET
-
-
- | Source:
-            
-Reliance Global Group, Inc.
-
-
-
-
-
-Reliance Global Group, Inc.</p><p>LAKEWOOD, N.J., Feb.  09, 2026  (GLOBE NEWSWIRE) -- Reliance Global Group, Inc. (Nasdaq: EZRA) (“we,” “us,” our,” the “Company” or “Reliance”) today announced that it has signed a definitive agreement to acquire over time a controlling interest in Enquantum Ltd., a post-quant...</div>
-            <a href="https://www.globenewswire.com/news-release/2026/02/09/3234504/0/en/Reliance-Global-Group-Signs-Definitive-Agreement-to-Acquire-Controlling-Stake-in-Post-Quantum-Cybersecurity-Company-Enquantum.html" target="_blank" class="read-link">Read Original Source</a>
+            <h4>Big tech firms claw back losses on fear of AI bubble</h4>
+            <span class="meta-tag">The Irish Times</span>
+            <div class="article-body"><p>European shares closed in the green amid a global equity rebound after last week’s sell-off prompted by fears of an artificial intelligence (AI) bubble. Irish shares outperformed the regional trend.</p><p>The Iseq All-Share index ended the session up 1.08 per cent at 13,438.07, closing in on an all-time high.</p><p>The Irish index’s gains were on the back of a strong performance of many of its ...</div>
+            <a href="https://www.irishtimes.com/business/markets/2026/02/09/big-tech-firms-claw-back-losses-on-fear-of-ai-bubble/" target="_blank" class="read-link">Read Full News &rarr;</a>
         </div>
-        
         <div class="side-article">
-            <h4>Global Conductive Polymers Industry on Track for $17 Billion Valuation by 2030</h4>
+            <h4>Synfini Introduces Integrated Microscale Purification, Delivering Assay-Ready Compounds in Hours Instead of Days</h4>
             <span class="meta-tag">GlobeNewswire</span>
-            <div class="article-body"><p>February 09, 2026 08:07 ET
-
-
- | Source:
-            
-BCC Research LLC
-
-
-
-
-
-BCC Research LLC</p><p>Boston, Feb.  09, 2026  (GLOBE NEWSWIRE) -- According to the latest study from BCC Research, “Global Conductive Polymers Market” is estimated to grow from $11.2 billion in 2025 to $17 billion by 2030, at a compound annual growth rate (CAGR) of 8.6% from 2025 through 2030.</p><p>This report offers ...</div>
-            <a href="https://www.globenewswire.com/news-release/2026/02/09/3234505/0/en/Global-Conductive-Polymers-Industry-on-Track-for-17-Billion-Valuation-by-2030.html" target="_blank" class="read-link">Read Original Source</a>
+            <div class="article-body"><p>MENLO PARK, Calif., Feb. 09, 2026 (GLOBE NEWSWIRE) -- Synfini, Inc ., provider of the industry's most advanced Agile AI Foundry for drug discovery, today announced the integration of microscale purification into high throughput experimentation (HTE) automation in SynBuild ™, the automated synthesis suite in the Synfini platform. Discovery teams can now move from synthesis to biological testing ...</div>
+            <a href="https://www.globenewswire.com/news-release/2026/02/09/3234832/0/en/Synfini-Introduces-Integrated-Microscale-Purification-Delivering-Assay-Ready-Compounds-in-Hours-Instead-of-Days.html" target="_blank" class="read-link">Read Full News &rarr;</a>
         </div>
-        
-                
-                <div style="background: var(--ink); color: #fff; padding: 20px; text-align: center; margin-top: 40px;">
-                    <p style="font-family: sans-serif; text-transform: uppercase; font-weight: bold; margin-bottom: 5px;">Weather</p>
-                    <p style="font-size: 2rem; margin: 0; font-family: 'Playfair Display', serif;">72°F</p>
-                    <p>Sunny in the Server Room</p>
-                </div>
-            </aside>
-        </main>
-    </div>
+        <div class="side-article">
+            <h4>AVENGERS: DOOMSDAY Rumor Reveals The Name Of Steve Rogers' Child And It's A Possible Spoiler</h4>
+            <span class="meta-tag">CBM (Comic Book Movie)</span>
+            <div class="article-body"><p>The first Avengers: Doomsday teaser trailer confirmed that Steve Rogers and Peggy Carter have a baby. Multiple insiders have since claimed that, when we next see the former Captain America and his wife, that baby will be a little boy.</p><p>Now, @MyTimeToShineH has revealed that Steve's son will be called James Rogers, seemingly named after James Buchanan "Bucky" Barnes.</p><p>You may think thi...</div>
+            <a href="https://comicbookmovie.com/avengers/avengers-doomsday/avengers-doomsday-rumor-reveals-the-name-of-steve-rogers-child-and-its-a-possible-spoiler-a226334" target="_blank" class="read-link">Read Full News &rarr;</a>
+        </div>
+                </aside>
+            </main>
+        </div>
     </body>
     </html>
     

@@ -1,1 +1,38 @@
+name: Daily Gazette Printer
 
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
+  workflow_dispatch:      # Allows you to click "Run Now" manually
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Generate Newspaper
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }} # Reads from Repo Secrets
+        run: python generate_gazette.py
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add index.html
+          git commit -m "Extra! Extra! Updated news feed" || exit 0
+          git push origin main --force

@@ -27,7 +27,7 @@ jobs:
       - name: Generate Newspaper
         env:
           NEWS_API_KEY: 02cd196b860e4d3e83a0535aa25569b3
-        run: python scripts/generate_gazette.py
+        run: python scripts/daily_gazette.py
 
       - name: Commit and Push
         run: |

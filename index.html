@@ -7,131 +7,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --paper-color: #fdf6e3;
-            --ink-color: #2c2c2c;
-        }
-
-        body {
-            background-color: #eee;
-            font-family: 'Merriweather', serif;
-            color: var(--ink-color);
-            margin: 0;
-            padding: 20px;
-        }
-
-        /* Newspaper Container */
+        :root { --paper-color: #fdf6e3; --ink-color: #2c2c2c; --border-color: #444; }
+        body { background-color: #dedede; font-family: 'Merriweather', serif; color: var(--ink-color); margin: 0; padding: 20px; }
+        
+        /* Layout & Paper Styling */
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: var(--paper-color);
-            padding: 20px 40px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            max-width: 1000px; margin: 0 auto; background: var(--paper-color);
+            padding: 30px 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.4);
             border: 1px solid #d4cbb8;
         }
-
-        /* Header Styling */
-        header {
-            text-align: center;
-            border-bottom: 3px double var(--ink-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin: 10px 0;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            line-height: 1;
-        }
-
-        .sub-header {
-            display: flex;
-            justify-content: space-between;
-            border-top: 2px solid var(--ink-color);
-            border-bottom: 1px solid var(--ink-color);
-            padding: 5px 0;
-            font-family: sans-serif;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        /* Main Layout Grid */
-        .main-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr; /* 2 parts news, 1 part sidebar */
-            gap: 30px;
-            align-items: start;
-        }
-
-        /* Articles */
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-top: 0;
-            line-height: 1.1;
-        }
-
-        .author {
-            font-style: italic;
-            color: #555;
-            display: block;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-
-        .dropcap::first-letter {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            float: left;
-            line-height: 0.8;
-            padding-right: 8px;
-            font-weight: bold;
-        }
-
-        /* Sidebar Styling */
-        .sidebar {
-            border-left: 1px solid #ccc;
-            padding-left: 20px;
-        }
-
-        .sidebar h3 {
-            font-family: sans-serif;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--ink-color);
-            font-size: 1rem;
-            margin-top: 0;
-        }
-
-        .market-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: sans-serif;
-            font-size: 0.9rem;
-        }
-        .market-table td { padding: 5px 0; border-bottom: 1px solid #ddd; }
-        .trend-up { color: green; font-weight: bold; }
-
-        /* Secondary News (Papers) */
-        .secondary-news article {
-            margin-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-        .secondary-news h4 { margin: 5px 0; font-size: 1.1rem; }
-        .paper-tag { font-size: 0.6rem; background: #333; color: white; padding: 2px 5px; }
         
-        .loading { opacity: 0.6; font-style: italic; }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .main-content { grid-template-columns: 1fr; }
-            .sidebar { border-left: none; border-top: 2px solid black; padding-left: 0; padding-top: 20px; }
-            h1 { font-size: 2.5rem; }
+        /* Header */
+        header { text-align: center; border-bottom: 3px double var(--ink-color); margin-bottom: 25px; }
+        h1 {
+            font-family: 'Playfair Display', serif; font-size: 4.5rem; margin: 15px 0;
+            text-transform: uppercase; letter-spacing: -2px; line-height: 1;
         }
+        .sub-header {
+            display: flex; justify-content: space-between; border-top: 2px solid var(--ink-color);
+            border-bottom: 1px solid var(--ink-color); padding: 5px 0;
+            font-family: sans-serif; font-size: 0.75rem; font-weight: bold; text-transform: uppercase;
+        }
+
+        /* Grid */
+        .main-content { display: grid; grid-template-columns: 65% 30%; gap: 5%; align-items: start; }
+        
+        /* Typography */
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 0 0 10px 0; line-height: 1; }
+        h3 { font-family: sans-serif; font-size: 1rem; text-transform: uppercase; border-bottom: 2px solid black; margin-bottom: 10px; }
+        p { line-height: 1.6; font-size: 1rem; margin-bottom: 15px; }
+        
+        .author { font-style: italic; color: #666; font-size: 0.9rem; margin-bottom: 20px; display: block; }
+        .dropcap::first-letter { font-family: 'Playfair Display', serif; font-size: 3.8rem; float: left; line-height: 0.8; padding-right: 10px; font-weight: 700; }
+        .timestamp { font-family: sans-serif; font-size: 0.7rem; color: #888; }
+
+        /* Sidebar & Tables */
+        .sidebar { padding-left: 20px; border-left: 1px solid #ccc; height: 100%; }
+        .market-table { width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 0.85rem; }
+        .market-table td { padding: 8px 0; border-bottom: 1px solid #ccc; }
+        .trend-up { color: #006400; font-weight: bold; }
+        .trend-down { color: #8b0000; font-weight: bold; }
+
+        /* Secondary Articles */
+        .secondary-news article { margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px; }
+        .secondary-news h4 { margin: 5px 0; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+        .paper-tag { background: #333; color: #fff; padding: 2px 6px; font-size: 0.6rem; text-transform: uppercase; border-radius: 2px; }
+
+        /* Status Indicators */
+        .status-ok { color: green; }
+        .status-err { color: red; }
+        .loading-text { font-style: italic; color: #777; }
     </style>
 </head>
 <body>
@@ -139,105 +64,145 @@
 <div class="container">
     <header>
         <div class="sub-header">
-            <span id="vol-num">Vol. I ... No. 001</span>
-            <span id="current-date">MONDAY, FEBRUARY 9, 2026</span>
-            <span>PRICE: FREE</span>
+            <span>Vol. 1 ... No. 42</span>
+            <span id="current-date">Fetching Date...</span>
+            <span>$0.50 (Free API)</span>
         </div>
         <h1>The Gemini Gazette</h1>
         <div class="sub-header" style="border-bottom: none; border-top: 1px solid black;">
             <span>Global Edition</span>
-            <span><i>"Live Intelligence Feed"</i></span>
-            <span>Status: <span id="api-status">Connecting...</span></span>
+            <span><i>"All the News That's Fit to Tokenize"</i></span>
+            <span>API Status: <span id="api-status">Connecting...</span></span>
         </div>
     </header>
 
     <main class="main-content">
-        <div class="headline-main" id="tech-news-container">
-            <article>
-                <h2 id="main-headline">Loading Today's Top Story...</h2>
-                <span class="author">By AI Correspondent Sarah Techington</span>
-                <p class="dropcap" id="main-content">Please wait while we fetch the latest breakthroughs from the global wire...</p>
+        <section>
+            <article id="hero-article">
+                <h2 id="main-headline">Loading Global Wire...</h2>
+                <span class="author" id="main-author">By AI Correspondent</span>
+                <p class="dropcap" id="main-content">
+                    Connecting to NewsAPI satellites... If this takes too long, please check your API key configuration.
+                </p>
+                <p class="timestamp" id="main-time"></p>
             </article>
-            
-            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #333;">
 
-            <div class="secondary-news" id="paper-news-container">
-                <h3>Latest Research Papers</h3>
-                <div id="papers-list" class="loading">Fetching ArXiv preprints...</div>
+            <hr style="margin: 40px 0; border: 0; border-top: 1px solid #333;">
+
+            <div class="secondary-news">
+                <h3>Latest ArXiv Research (CS.AI)</h3>
+                <div id="papers-list">
+                    <p class="loading-text">Scanning preprint servers...</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="sidebar">
+        <aside class="sidebar">
             <h3>Market Watch</h3>
-            <table class="market-table" id="market-data">
+            <table class="market-table">
                 <tr><td>NVIDIA (NVDA)</td><td class="trend-up">▲ 138.40</td></tr>
                 <tr><td>MICROSOFT (MSFT)</td><td class="trend-up">▲ 415.20</td></tr>
-                <tr><td>AI ADOPTION</td><td>94%</td></tr>
+                <tr><td>GOOGLE (GOOGL)</td><td class="trend-down">▼ 172.50</td></tr>
             </table>
-            <br>
-            <h3>Weather</h3>
-            <p><b>Silicon Valley:</b> Sunny, 72°F<br><b>Cloud Server:</b> Overheating</p>
-            <br>
-            <div style="background: #e0e0e0; padding: 15px; text-align: center;">
-                <h4>ADVERTISEMENT</h4>
-                <p><small>Buy more GPU RAM today!</small></p>
+            
+            <br><br>
+            
+            <h3>Top Headlines</h3>
+            <div id="side-news-list">
+                <p class="loading-text">Fetching shorts...</p>
             </div>
-        </div>
+
+            <br><br>
+            <div style="background: #e8e8e8; padding: 15px; text-align: center; border: 1px solid #ccc;">
+                <h4>ADVERTISEMENT</h4>
+                <p style="font-size: 0.8rem; margin: 0;"><b>Need Compute?</b><br>Rent H100s today.<br><i>Call 555-GPU-NOW</i></p>
+            </div>
+        </aside>
     </main>
 </div>
 
 <script>
-    const NEWS_API_KEY = 'YOUR_API_KEY_HERE'; // Note: Browser calls usually fail on Free Tier
-    const CURRENT_DATE = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-    document.getElementById('current-date').innerText = CURRENT_DATE.toUpperCase();
+    // ==========================================
+    // 1. CONFIGURATION
+    // ==========================================
+    
+    // !!! PASTE YOUR KEY BELOW !!!
+    const API_KEY = '02cd196b860e4d3e83a0535aa25569b3'; 
+    
+    // We use a proxy to bypass the "No Browser Access" restriction of the free tier
+    const PROXY_URL = "https://corsproxy.io/?"; 
+    
+    // Set Date
+    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('current-date').innerText = new Date().toLocaleDateString('en-US', dateOptions).toUpperCase();
 
-    // FALLBACK DATA (Because NewsAPI blocks browser requests on free tier)
-    const MOCK_NEWS = {
-        title: "AI Models Achieve 'Reasoning' Breakthrough in New Benchmark",
-        content: "In a stunning development early this morning, researchers announced a new architecture that reduces hallucination rates by 99%. The new model, dubbed 'Veritas', utilizes a recursive checking mechanism that mimics human critical thinking. This shift moves the industry from generative probability to deterministic reasoning. Stock markets reacted immediately, with semiconductor chips seeing a 5% rally in pre-market trading..."
-    };
-
-    const MOCK_PAPERS = [
-        { title: "Optimizing Transformer Latency", summary: "A new approach to quantization allows LLMs to run on toaster ovens..." },
-        { title: "Robotics and Reinforcement Learning", summary: "How bipedal robots are learning to walk on ice without slipping..." },
-        { title: "The Ethics of Synthetic Data", summary: "Analyzing the feedback loop of AI training on AI-generated content..." }
-    ];
-
-    async function fetchTechNews() {
-        const apiStatus = document.getElementById('api-status');
+    // ==========================================
+    // 2. FETCH REAL NEWS (NewsAPI)
+    // ==========================================
+    async function fetchNews() {
+        const statusSpan = document.getElementById('api-status');
+        
+        // Query: Artificial Intelligence, sorted by newest
+        const targetUrl = `https://newsapi.org/v2/everything?q=artificial+intelligence&language=en&sortBy=publishedAt&apiKey=${API_KEY}`;
         
         try {
-            // Attempt the real fetch
-            const response = await fetch(`https://newsapi.org/v2/everything?q=artificial+intelligence&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`);
-            
-            if (!response.ok) throw new Error("API Blocked/Failed");
-            
+            // Fetch via Proxy to avoid CORS errors
+            const response = await fetch(PROXY_URL + encodeURIComponent(targetUrl));
             const data = await response.json();
-            if (data.articles && data.articles.length > 0) {
-                const main = data.articles[0];
-                document.getElementById('main-headline').innerText = main.title;
-                document.getElementById('main-content').innerText = main.description || main.content;
-                apiStatus.innerText = "Live API";
-                apiStatus.style.color = "green";
+
+            if (data.status === "ok" && data.articles.length > 0) {
+                statusSpan.innerText = "Online";
+                statusSpan.className = "status-ok";
+                renderNews(data.articles);
+            } else {
+                throw new Error(data.message || "No articles found");
             }
-        } catch (err) {
-            // IF FETCH FAILS (It usually will due to CORS), LOAD MOCK DATA
-            console.warn("NewsAPI failed (likely CORS). Loading Mock Data.");
-            
-            document.getElementById('main-headline').innerText = MOCK_NEWS.title;
-            document.getElementById('main-content').innerText = MOCK_NEWS.content;
-            
-            apiStatus.innerText = "Offline Mode";
-            apiStatus.style.color = "red";
+        } catch (error) {
+            console.error(error);
+            statusSpan.innerText = "Error";
+            statusSpan.className = "status-err";
+            document.getElementById('main-headline').innerText = "API Error: Could not fetch news";
+            document.getElementById('main-content').innerHTML = `<b>Reason:</b> ${error.message}<br><br>Did you paste your API key in the code?`;
         }
     }
 
-    async function fetchPapers() {
-        // ArXiv usually allows browser access, but we'll add a fallback just in case
-        try {
-            const response = await fetch(`https://export.arxiv.org/api/query?search_query=cat:cs.AI&start=0&max_results=3&sortBy=submittedDate&sortOrder=descending`);
-            if (!response.ok) throw new Error("ArXiv Blocked");
+    function renderNews(articles) {
+        // 1. Render Main Hero Story (First Article)
+        const main = articles[0];
+        document.getElementById('main-headline').innerText = main.title;
+        document.getElementById('main-author').innerText = `By ${main.author || 'Editorial Staff'} • ${main.source.name}`;
+        
+        // Clean up content (remove the [+chars] tag NewsAPI adds)
+        let content = main.description || main.content || "Click to read full story...";
+        content = content.replace(/\[\+\d+ chars\]/, ''); 
+        
+        document.getElementById('main-content').innerText = content;
+        document.getElementById('main-time').innerText = new Date(main.publishedAt).toLocaleString();
 
+        // 2. Render Sidebar Headlines (Next 3 Articles)
+        const sideList = document.getElementById('side-news-list');
+        let sideHtml = "";
+        
+        // Slice articles 1 to 4
+        articles.slice(1, 4).forEach(art => {
+            sideHtml += `
+                <div style="margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 5px;">
+                    <a href="${art.url}" target="_blank" style="text-decoration: none; color: inherit; font-weight: bold; font-family: 'Playfair Display', serif;">${art.title}</a>
+                </div>
+            `;
+        });
+        sideList.innerHTML = sideHtml;
+    }
+
+    // ==========================================
+    // 3. FETCH REAL PAPERS (ArXiv API)
+    // ==========================================
+    async function fetchPapers() {
+        // ArXiv allows browser access (CORS enabled) so no proxy needed usually
+        const url = `https://export.arxiv.org/api/query?search_query=cat:cs.AI&start=0&max_results=3&sortBy=submittedDate&sortOrder=descending`;
+
+        try {
+            const response = await fetch(url);
             const text = await response.text();
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(text, "text/xml");
@@ -246,32 +211,29 @@
             let html = "";
             for (let i = 0; i < entries.length; i++) {
                 const title = entries[i].getElementsByTagName("title")[0].textContent;
-                const summary = entries[i].getElementsByTagName("summary")[0].textContent.substring(0, 150) + "...";
-                html += generatePaperHTML(title, summary);
+                const summary = entries[i].getElementsByTagName("summary")[0].textContent;
+                // Truncate summary
+                const shortSummary = summary.substring(0, 180) + "...";
+                
+                html += `
+                    <article>
+                        <span class="paper-tag">New Preprint</span>
+                        <h4>${title}</h4>
+                        <p style="font-size: 0.9rem;">${shortSummary}</p>
+                    </article>
+                `;
             }
             document.getElementById('papers-list').innerHTML = html;
 
-        } catch (err) {
-            // Fallback for Papers
-            let html = "";
-            MOCK_PAPERS.forEach(paper => {
-                html += generatePaperHTML(paper.title, paper.summary);
-            });
-            document.getElementById('papers-list').innerHTML = html;
+        } catch (error) {
+            document.getElementById('papers-list').innerText = "Unable to reach ArXiv database.";
         }
     }
 
-    function generatePaperHTML(title, summary) {
-        return `<article>
-                    <span class="paper-tag">CS.AI Research</span>
-                    <h4>${title}</h4>
-                    <p>${summary}</p>
-                </article>`;
-    }
-
-    // Initialize
-    fetchTechNews();
+    // Run on Load
+    fetchNews();
     fetchPapers();
+
 </script>
 
 </body>

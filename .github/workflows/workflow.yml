@@ -27,7 +27,7 @@ jobs:
       - name: Generate Newspaper
         env:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }} # Reads from Repo Secrets
-        run: python generate_gazette.py
+        run: python scripts/generate_gazette.py
 
       - name: Commit and Push
         run: |

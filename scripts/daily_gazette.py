@@ -61,8 +61,8 @@ def evaluate_content_quality(text, title, domain):
 def fetch_reputable_ai_news():
     print("🗞️ Scraping LATEST High-Signal News...")
     
-    # Look back 72 hours to ensure a full front page on slow days
-    time_window = int(time.time()) - (72 * 3600)
+    # Look back 1 week to ensure a full front page on slow days
+    time_window = int(time.time()) - (168 * 3600)
     
     # Using 'search_by_date' ensures we don't get 2020 stories
     url = f"https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&numericFilters=created_at_i>{time_window}"

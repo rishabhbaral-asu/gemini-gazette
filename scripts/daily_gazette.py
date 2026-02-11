@@ -3,11 +3,10 @@ import datetime
 import time
 from bs4 import BeautifulSoup
 from newspaper import Article, Config
-
+import os
 # --- CONFIGURATION ---
 # We still keep these for "Bonus Points", but we no longer limit to them.
 RESEARCH_LABS = ['openai.com', 'anthropic.com', 'sarvam.ai', 'paperbanana.com']
-GNEWS_API_KEY = "YOUR_GNEWS_API_KEY" # Add this to your GitHub Secrets!
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36'
 config = Config()
@@ -86,7 +85,7 @@ def fetch_wide_ai_news():
 
 if __name__ == "__main__":
     # If GNEWS_API_KEY is in environment variables (GitHub Secrets)
-    GNEWS_API_KEY = os.getenv('GNEWS_API_KEY', 'your_backup_key_here')
+    GNEWS_API_KEY = os.getenv('GNEWS_API_KEY', 'd0dbb41f42302e37e002fd4f8337a53d')
     
     news = fetch_wide_ai_news()
     papers = fetch_arxiv_papers()

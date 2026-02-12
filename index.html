@@ -1,1 +1,380 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><style>@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville&display=swap');body { background:#f4f1ea; font-family:'Libre Baskerville'; padding:20px; } .container { max-width:1100px; margin:0 auto; background:#fffefc; padding:30px; border:1px solid #333; } header { text-align:center; border-bottom:5px double #333; margin-bottom:20px; } h1 { font-family:'Playfair Display'; font-size:4rem; margin:0; } main { display:grid; grid-template-columns: 2fr 1fr; gap:30px; } .tag { font-size:10px; padding:3px; color:white; background:#333; } .secondary-news { display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid #333; padding-top:10px; }</style></head><body><div class="container"><header><h1>The Gemini Gazette</h1><p>WEDNESDAY, FEBRUARY 11, 2026</p></header><main><div></div><aside><h3>RESEARCH WIRE</h3><div class='paper-entry'><span class='tag tag-ai'>AI RESEARCH</span><h4><a href='http://arxiv.org/abs/2602.10117v1'>Biases in the Blind Spot: Detecting What LLMs Fail to Mention</a></h4><p>Large Language Models (LLMs) often provide chain-of-thought (CoT) reasoning traces that appear plausible, but may hide internal biases. We call these ...</p></div><hr><div class='paper-entry'><span class='tag tag-ai'>AI RESEARCH</span><h4><a href='http://arxiv.org/abs/2602.10104v1'>Olaf-World: Orienting Latent Actions for Video World Modeling</a></h4><p>Scaling action-controllable world models is limited by the scarcity of action labels. While latent action learning promises to extract control interfa...</p></div><hr><div class='paper-entry'><span class='tag tag-ai'>AI RESEARCH</span><h4><a href='http://arxiv.org/abs/2602.10097v1'>Step-resolved data attribution for looped transformers</a></h4><p>We study how individual training examples shape the internal computation of looped transformers, where a shared block is applied for $τ$ recurrent ite...</p></div><hr><div class='paper-entry'><span class='tag tag-ai'>AI RESEARCH</span><h4><a href='http://arxiv.org/abs/2602.10095v1'>Causality in Video Diffusers is Separable from Denoising</a></h4><p>Causality -- referring to temporal, uni-directional cause-effect relationships between components -- underlies many complex generative processes, incl...</p></div><hr><div class='paper-entry'><span class='tag tag-nlp'>NLP / LANGUAGE</span><h4><a href='http://arxiv.org/abs/2602.10092v1'>Quantum-Audit: Evaluating the Reasoning Limits of LLMs on Quantum Computing</a></h4><p>Language models have become practical tools for quantum computing education and research, from summarizing technical papers to explaining theoretical ...</p></div><hr><div class='paper-entry'><span class='tag tag-ai'>AI RESEARCH</span><h4><a href='http://arxiv.org/abs/2602.10090v1'>Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning</a></h4><p>Recent advances in large language model (LLM) have empowered autonomous agents to perform complex tasks that require multi-turn interactions with tool...</p></div><hr></aside></main></div></body></html>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Libre+Baskerville:wght@400;700&display=swap');
+            
+            body { background: #f4f1ea; color: #1a1a1a; font-family: 'Libre Baskerville', serif; margin: 0; padding: 2vw; }
+            .masthead { text-align: center; border-bottom: 5px double #333; margin-bottom: 40px; }
+            .masthead h1 { font-family: 'Playfair Display'; font-size: 5rem; margin: 0; letter-spacing: -2px; }
+            
+            .news-desk { margin-bottom: 50px; }
+            .desk-title { border-bottom: 2px solid #333; font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px; padding-bottom: 5px; }
+            
+            .horizontal-scroll { 
+                display: flex; 
+                overflow-x: auto; 
+                gap: 25px; 
+                padding-bottom: 20px;
+                scrollbar-width: thin;
+                scrollbar-color: #333 #f4f1ea;
+            }
+            
+            .horizontal-scroll::-webkit-scrollbar { height: 8px; }
+            .horizontal-scroll::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+            .card { 
+                flex: 0 0 350px; 
+                background: #fffefc; 
+                border: 1px solid #d1cec1; 
+                padding: 20px; 
+                box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+            }
+            
+            .card-date { font-size: 10px; font-weight: bold; color: #777; margin-bottom: 10px; }
+            h3 { font-family: 'Playfair Display'; font-size: 1.3rem; margin: 0 0 10px 0; line-height: 1.2; }
+            h3 a { color: #1a1a1a; text-decoration: none; }
+            .meta { font-size: 11px; font-weight: bold; text-transform: uppercase; color: #555; }
+            .text { font-size: 13px; line-height: 1.6; color: #333; }
+        </style>
+    </head>
+    <body>
+        <div class="masthead">
+            <h1>The Research Gazette</h1>
+            <p>TEMPE, AZ — FEBRUARY 12, 2026 — LATEST SUBMISSIONS</p>
+        </div>
+        
+        <section class="news-desk">
+            <h2 class="desk-title">AI DESK</h2>
+            <div class="horizontal-scroll">
+                
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11151v1" target="_blank">Diffusion-Pretrained Dense and Contextual Embeddings</a></h3>
+                <p class="meta">By Sedigheh Eslami, Maksim Gaiduk</p>
+                <p class="text">In this report, we introduce pplx-embed, a family of multilingual embedding models that employ multi-stage contrastive learning on a diffusion-pretrained language model backbone for web-scale retrieval. By leveraging bidirectional attention through diffusion-based pretraining, ou...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11144v1" target="_blank">GENIUS: Generative Fluid Intelligence Evaluation Suite</a></h3>
+                <p class="meta">By Ruichuan An, Sihan Yang</p>
+                <p class="text">Unified Multimodal Models (UMMs) have shown remarkable progress in visual generation. Yet, existing benchmarks predominantly assess $\textit{Crystallized Intelligence}$, which relies on recalling accumulated knowledge and learned schemas. This focus overlooks $\textit{Generative ...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11142v1" target="_blank">Data-Efficient Hierarchical Goal-Conditioned Reinforcement Learning via Normalizing Flows</a></h3>
+                <p class="meta">By Shaswat Garg, Matin Moezzi</p>
+                <p class="text">Hierarchical goal-conditioned reinforcement learning (H-GCRL) provides a powerful framework for tackling complex, long-horizon tasks by decomposing them into structured subgoals. However, its practical adoption is hindered by poor data efficiency and limited policy expressivity, ...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11137v1" target="_blank">Weight Decay Improves Language Model Plasticity</a></h3>
+                <p class="meta">By Tessa Han, Sebastian Bordt</p>
+                <p class="text">The prevailing paradigm in large language model (LLM) development is to pretrain a base model, then perform further training to improve performance and model behavior. However, hyperparameter optimization and scaling laws have been studied primarily from the perspective of the ba...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11136v1" target="_blank">FormalJudge: A Neuro-Symbolic Paradigm for Agentic Oversight</a></h3>
+                <p class="meta">By Jiayi Zhou, Yang Sheng</p>
+                <p class="text">As LLM-based agents increasingly operate in high-stakes domains with real-world consequences, ensuring their behavioral safety becomes paramount. The dominant oversight paradigm, LLM-as-a-Judge, faces a fundamental dilemma: how can probabilistic systems reliably supervise other p...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11133v1" target="_blank">Just on Time: Token-Level Early Stopping for Diffusion Language Models</a></h3>
+                <p class="meta">By Zahar Kohut, Severyn Shykula</p>
+                <p class="text">Diffusion language models generate text through iterative refinement, a process that is often computationally inefficient because many tokens reach stability long before the final denoising step. We introduce a training-free, token-level early stopping approach that identifies co...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11130v1" target="_blank">From Circuits to Dynamics: Understanding and Stabilizing Failure in 3D Diffusion Transformers</a></h3>
+                <p class="meta">By Maximilian Plattner, Fabian Paischer</p>
+                <p class="text">Reliable surface completion from sparse point clouds underpins many applications spanning content creation and robotics. While 3D diffusion transformers attain state-of-the-art results on this task, we uncover that they exhibit a catastrophic mode of failure: arbitrarily small on...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11114v1" target="_blank">Learning to Compose for Cross-domain Agentic Workflow Generation</a></h3>
+                <p class="meta">By Jialiang Wang, Shengxiang Xu</p>
+                <p class="text">Automatically generating agentic workflows -- executable operator graphs or codes that orchestrate reasoning, verification, and repair -- has become a practical way to solve complex tasks beyond what single-pass LLM generation can reliably handle. Yet what constitutes a good work...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11103v1" target="_blank">GameDevBench: Evaluating Agentic Capabilities Through Game Development</a></h3>
+                <p class="meta">By Wayne Chi, Yixiong Fang</p>
+                <p class="text">Despite rapid progress on coding agents, progress on their multimodal counterparts has lagged behind. A key challenge is the scarcity of evaluation testbeds that combine the complexity of software development with the need for deep multimodal understanding. Game development provi...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11090v1" target="_blank">Direct Learning of Calibration-Aware Uncertainty for Neural PDE Surrogates</a></h3>
+                <p class="meta">By Carlos Stein Brito</p>
+                <p class="text">Neural PDE surrogates are often deployed in data-limited or partially observed regimes where downstream decisions depend on calibrated uncertainty in addition to low prediction error. Existing approaches obtain uncertainty through ensemble replication, fixed stochastic noise such...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11087v1" target="_blank">General Flexible $f$-divergence for Challenging Offline RL Datasets with Low Stochasticity and Diverse Behavior Policies</a></h3>
+                <p class="meta">By Jianxun Wang, Grant C. Forbes</p>
+                <p class="text">Offline RL algorithms aim to improve upon the behavior policy that produces the collected data while constraining the learned policy to be within the support of the dataset. However, practical offline datasets often contain examples with little diversity or limited exploration of...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11084v1" target="_blank">GRASP: group-Shapley feature selection for patients</a></h3>
+                <p class="meta">By Yuheng Luo, Shuyan Li</p>
+                <p class="text">Feature selection remains a major challenge in medical prediction, where existing approaches such as LASSO often lack robustness and interpretability. We introduce GRASP, a novel framework that couples Shapley value driven attribution with group $L_{21}$ regularization to extract...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11079v1" target="_blank">In-the-Wild Model Organisms: Mitigating Undesirable Emergent Behaviors in Production LLM Post-Training via Data Attribution</a></h3>
+                <p class="meta">By Frank Xiao, Santiago Aranguri</p>
+                <p class="text">We propose activation-based data attribution, a method that traces behavioral changes in post-trained language models to responsible training datapoints. By computing activation-difference vectors for both test prompts and preference pairs and ranking by cosine similarity, we ide...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11076v1" target="_blank">Interpretable Attention-Based Multi-Agent PPO for Latency Spike Resolution in 6G RAN Slicing</a></h3>
+                <p class="meta">By Kavan Fatehi, Mostafa Rahmani Ghourtani</p>
+                <p class="text">Sixth-generation (6G) radio access networks (RANs) must enforce strict service-level agreements (SLAs) for heterogeneous slices, yet sudden latency spikes remain difficult to diagnose and resolve with conventional deep reinforcement learning (DRL) or explainable RL (XRL). We prop...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11052v1" target="_blank">GraphSeek: Next-Generation Graph Analytics with LLMs</a></h3>
+                <p class="meta">By Maciej Besta, Łukasz Jarmocik</p>
+                <p class="text">Graphs are foundational across domains but remain hard to use without deep expertise. LLMs promise accessible natural language (NL) graph analytics, yet they fail to process industry-scale property graphs effectively and efficiently: such datasets are large, highly heterogeneous,...</p>
+            </div>
+            
+            </div>
+        </section>
+        
+        <section class="news-desk">
+            <h2 class="desk-title">NLP DESK</h2>
+            <div class="horizontal-scroll">
+                
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11149v1" target="_blank">Data Repetition Beats Data Scaling in Long-CoT Supervised Fine-Tuning</a></h3>
+                <p class="meta">By Dawid J. Kopiczko, Sagar Vaze</p>
+                <p class="text">Supervised fine-tuning (SFT) on chain-of-thought data is an essential post-training step for reasoning language models. Standard machine learning intuition suggests that training with more unique training samples yields better generalization. Counterintuitively, we show that SFT ...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11106v1" target="_blank">TEGRA: Text Encoding With Graph and Retrieval Augmentation for Misinformation Detection</a></h3>
+                <p class="meta">By Géraud Faye, Wassila Ouerdane</p>
+                <p class="text">Misinformation detection is a critical task that can benefit significantly from the integration of external knowledge, much like manual fact-checking. In this work, we propose a novel method for representing textual documents that facilitates the incorporation of information from...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11096v1" target="_blank">Safety Recovery in Reasoning Models Is Only a Few Early Steering Steps Away</a></h3>
+                <p class="meta">By Soumya Suvra Ghosal, Souradip Chakraborty</p>
+                <p class="text">Reinforcement learning (RL) based post-training for explicit chain-of-thought (e.g., GRPO) improves the reasoning ability of multimodal large-scale reasoning models (MLRMs). But recent evidence shows that it can simultaneously degrade safety alignment and increase jailbreak succe...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11091v1" target="_blank">Can Large Language Models Make Everyone Happy?</a></h3>
+                <p class="meta">By Usman Naseem, Gautam Siddharth Kashyap</p>
+                <p class="text">Misalignment in Large Language Models (LLMs) refers to the failure to simultaneously satisfy safety, value, and cultural dimensions, leading to behaviors that diverge from human expectations in real-world settings where these dimensions must co-occur. Existing benchmarks, such as...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11089v1" target="_blank">DataChef: Cooking Up Optimal Data Recipes for LLM Adaptation via Reinforcement Learning</a></h3>
+                <p class="meta">By Yicheng Chen, Zerun Ma</p>
+                <p class="text">In the current landscape of Large Language Models (LLMs), the curation of large-scale, high-quality training data is a primary driver of model performance. A key lever is the \emph{data recipe}, which comprises a data processing pipeline to transform raw sources into training cor...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11081v1" target="_blank">SteuerLLM: Local specialized large language model for German tax law analysis</a></h3>
+                <p class="meta">By Sebastian Wind, Jeta Sopa</p>
+                <p class="text">Large language models (LLMs) demonstrate strong general reasoning and language understanding, yet their performance degrades in domains governed by strict formal rules, precise terminology, and legally binding structure. Tax law exemplifies these challenges, as correct answers re...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11072v1" target="_blank">Simultaneous Speech-to-Speech Translation Without Aligned Data</a></h3>
+                <p class="meta">By Tom Labiausse, Romain Fabre</p>
+                <p class="text">Simultaneous speech translation requires translating source speech into a target language in real-time while handling non-monotonic word dependencies. Traditional approaches rely on supervised training with word-level aligned data, which is difficult to collect at scale and thus ...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11065v1" target="_blank">Conversational Behavior Modeling Foundation Model With Multi-Level Perception</a></h3>
+                <p class="meta">By Dingkun Zhou, Shuchang Pan</p>
+                <p class="text">Human conversation is organized by an implicit chain of thoughts that manifests as timed speech acts. Capturing this perceptual pathway is key to building natural full-duplex interactive systems. We introduce a framework that models this process as multi-level perception, and the...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11047v1" target="_blank">Embedding Inversion via Conditional Masked Diffusion Language Models</a></h3>
+                <p class="meta">By Han Xiao</p>
+                <p class="text">We frame embedding inversion as conditional masked diffusion, recovering all tokens in parallel through iterative denoising rather than sequential autoregressive generation. A masked diffusion language model is conditioned on the target embedding via adaptive layer normalization,...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11044v1" target="_blank">Language Model Inversion through End-to-End Differentiation</a></h3>
+                <p class="meta">By Kevin Yandoka Denamganaï, Kartic Subr</p>
+                <p class="text">Despite emerging research on Language Models (LM), few approaches analyse the invertibility of LMs. That is, given a LM and a desirable target output sequence of tokens, determining what input prompts would yield the target output remains an open problem. We formulate this proble...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11028v1" target="_blank">Linguistic Indicators of Early Cognitive Decline in the DementiaBank Pitt Corpus: A Statistical and Machine Learning Study</a></h3>
+                <p class="meta">By Artsvik Avetisyan, Sachin Kumar</p>
+                <p class="text">Background: Subtle changes in spontaneous language production are among the earliest indicators of cognitive decline. Identifying linguistically interpretable markers of dementia can support transparent and clinically grounded screening approaches.   Methods: This study analyzes ...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.10993v1" target="_blank">LoRA-Squeeze: Simple and Effective Post-Tuning and In-Tuning Compression of LoRA Modules</a></h3>
+                <p class="meta">By Ivan Vulić, Adam Grycner</p>
+                <p class="text">Despite its huge number of variants, standard Low-Rank Adaptation (LoRA) is still a dominant technique for parameter-efficient fine-tuning (PEFT). Nonetheless, it faces persistent challenges, including the pre-selection of an optimal rank and rank-specific hyper-parameters, as we...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.10953v1" target="_blank">Search or Accelerate: Confidence-Switched Position Beam Search for Diffusion Language Models</a></h3>
+                <p class="meta">By Mingyu Cao, Alvaro Correia</p>
+                <p class="text">Diffusion Language Models (DLMs) generate text by iteratively denoising a masked sequence, repeatedly deciding which positions to commit at each step. Standard decoding follows a greedy rule: unmask the most confident positions, yet this local choice can lock the model into a sub...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.10947v1" target="_blank">Computational Phenomenology of Temporal Experience in Autism: Quantifying the Emotional and Narrative Characteristics of Lived Unpredictability</a></h3>
+                <p class="meta">By Kacper Dudzic, Karolina Drożdż</p>
+                <p class="text">Disturbances in temporality, such as desynchronization with the social environment and its unpredictability, are considered core features of autism with a deep impact on relationships. However, limitations regarding research on this issue include: 1) the dominance of deficit-base...</p>
+            </div>
+            
+            </div>
+        </section>
+        
+        <section class="news-desk">
+            <h2 class="desk-title">VISION DESK</h2>
+            <div class="horizontal-scroll">
+                
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11154v1" target="_blank">SurfPhase: 3D Interfacial Dynamics in Two-Phase Flows from Sparse Videos</a></h3>
+                <p class="meta">By Yue Gao, Hong-Xing Yu</p>
+                <p class="text">Interfacial dynamics in two-phase flows govern momentum, heat, and mass transfer, yet remain difficult to measure experimentally. Classical techniques face intrinsic limitations near moving interfaces, while existing neural rendering methods target single-phase flows with diffuse...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11146v1" target="_blank">Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling</a></h3>
+                <p class="meta">By Gongye Liu, Bo Yang</p>
+                <p class="text">Preference optimization for diffusion and flow-matching models relies on reward functions that are both discriminatively robust and computationally efficient. Vision-Language Models (VLMs) have emerged as the primary reward provider, leveraging their rich multimodal priors to gui...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11124v1" target="_blank">PhyCritic: Multimodal Critic Models for Physical AI</a></h3>
+                <p class="meta">By Tianyi Xiong, Shihao Wang</p>
+                <p class="text">With the rapid development of large multimodal models, reliable judge and critic models have become essential for open-ended evaluation and preference alignment, providing pairwise preferences, numerical scores, and explanatory justifications for assessing model-generated respons...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11117v1" target="_blank">HairWeaver: Few-Shot Photorealistic Hair Motion Synthesis with Sim-to-Real Guided Video Diffusion</a></h3>
+                <p class="meta">By Di Chang, Ji Hou</p>
+                <p class="text">We present HairWeaver, a diffusion-based pipeline that animates a single human image with realistic and expressive hair dynamics. While existing methods successfully control body pose, they lack specific control over hair, and as a result, fail to capture the intricate hair motio...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11105v1" target="_blank">FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference</a></h3>
+                <p class="meta">By Divya Jyoti Bajpai, Dhruv Bhardwaj</p>
+                <p class="text">Flow-matching models deliver state-of-the-art fidelity in image and video generation, but the inherent sequential denoising process renders them slower. Existing acceleration methods like distillation, trajectory truncation, and consistency approaches are static, require retraini...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11086v1" target="_blank">First International StepUP Competition for Biometric Footstep Recognition: Methods, Results and Remaining Challenges</a></h3>
+                <p class="meta">By Robyn Larracy, Eve MacDonald</p>
+                <p class="text">Biometric footstep recognition, based on a person's unique pressure patterns under their feet during walking, is an emerging field with growing applications in security and safety. However, progress in this area has been limited by the lack of large, diverse datasets necessary to...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11073v1" target="_blank">Chatting with Images for Introspective Visual Thinking</a></h3>
+                <p class="meta">By Junfei Wu, Jian Guan</p>
+                <p class="text">Current large vision-language models (LVLMs) typically rely on text-only reasoning based on a single-pass visual encoding, which often leads to loss of fine-grained visual information. Recently the proposal of ''thinking with images'' attempts to alleviate this limitation by mani...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11066v1" target="_blank">PuriLight: A Lightweight Shuffle and Purification Framework for Monocular Depth Estimation</a></h3>
+                <p class="meta">By Yujie Chen, Li Zhang</p>
+                <p class="text">We propose PuriLight, a lightweight and efficient framework for self-supervised monocular depth estimation, to address the dual challenges of computational efficiency and detail preservation. While recent advances in self-supervised depth estimation have reduced reliance on groun...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11024v1" target="_blank">Chain-of-Look Spatial Reasoning for Dense Surgical Instrument Counting</a></h3>
+                <p class="meta">By Rishikesh Bhyri, Brian R Quaranto</p>
+                <p class="text">Accurate counting of surgical instruments in Operating Rooms (OR) is a critical prerequisite for ensuring patient safety during surgery. Despite recent progress of large visual-language models and agentic AI, accurately counting such instruments remains highly challenging, partic...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11007v1" target="_blank">LaSSM: Efficient Semantic-Spatial Query Decoding via Local Aggregation and State Space Models for 3D Instance Segmentation</a></h3>
+                <p class="meta">By Lei Yao, Yi Wang</p>
+                <p class="text">Query-based 3D scene instance segmentation from point clouds has attained notable performance. However, existing methods suffer from the query initialization dilemma due to the sparse nature of point clouds and rely on computationally intensive attention mechanisms in query decod...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11005v1" target="_blank">Interpretable Vision Transformers in Monocular Depth Estimation via SVDA</a></h3>
+                <p class="meta">By Vasileios Arampatzakis, George Pavlidis</p>
+                <p class="text">Monocular depth estimation is a central problem in computer vision with applications in robotics, AR, and autonomous driving, yet the self-attention mechanisms that drive modern Transformer architectures remain opaque. We introduce SVD-Inspired Attention (SVDA) into the Dense Pre...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.11004v1" target="_blank">Enhancing Predictability of Multi-Tenant DNN Inference for Autonomous Vehicles' Perception</a></h3>
+                <p class="meta">By Liangkai Liu, Kang G. Shin</p>
+                <p class="text">Autonomous vehicles (AVs) rely on sensors and deep neural networks (DNNs) to perceive their surrounding environment and make maneuver decisions in real time. However, achieving real-time DNN inference in the AV's perception pipeline is challenging due to the large gap between the...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.10994v1" target="_blank">Interpretable Vision Transformers in Image Classification via SVDA</a></h3>
+                <p class="meta">By Vasileios Arampatzakis, George Pavlidis</p>
+                <p class="text">Vision Transformers (ViTs) have achieved state-of-the-art performance in image classification, yet their attention mechanisms often remain opaque and exhibit dense, non-structured behaviors. In this work, we adapt our previously proposed SVD-Inspired Attention (SVDA) mechanism to...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.10985v1" target="_blank">DFIC: Towards a balanced facial image dataset for automatic ICAO compliance verification</a></h3>
+                <p class="meta">By Nuno Gonçalves, Diogo Nunes</p>
+                <p class="text">Ensuring compliance with ISO/IEC and ICAO standards for facial images in machine-readable travel documents (MRTDs) is essential for reliable identity verification, but current manual inspection methods are inefficient in high-demand environments. This paper introduces the DFIC da...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-date">2026-02-11</div>
+                <h3><a href="http://arxiv.org/abs/2602.10978v1" target="_blank">VFGS-Net: Frequency-Guided State-Space Learning for Topology-Preserving Retinal Vessel Segmentation</a></h3>
+                <p class="meta">By Ruiqi Song, Lei Liu</p>
+                <p class="text">Accurate retinal vessel segmentation is a critical prerequisite for quantitative analysis of retinal images and computer-aided diagnosis of vascular diseases such as diabetic retinopathy. However, the elongated morphology, wide scale variation, and low contrast of retinal vessels...</p>
+            </div>
+            
+            </div>
+        </section>
+        
+    </body>
+    </html>
+    

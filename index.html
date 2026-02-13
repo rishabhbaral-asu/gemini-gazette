@@ -1,17 +1,28 @@
 
     <!DOCTYPE html>
-    <html>
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <title>The Silicon Scroll | AI Research</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Libre+Baskerville:wght@400;700&display=swap');
             
             body { background: #f4f1ea; color: #1a1a1a; font-family: 'Libre Baskerville', serif; margin: 0; padding: 2vw; }
-            .masthead { text-align: center; border-bottom: 5px double #333; margin-bottom: 40px; }
+            .masthead { text-align: center; border-bottom: 5px double #333; margin-bottom: 40px; padding-bottom: 15px; }
             .masthead h1 { font-family: 'Playfair Display'; font-size: 5rem; margin: 0; letter-spacing: -2px; }
             
             .news-desk { margin-bottom: 50px; }
-            .desk-title { border-bottom: 2px solid #333; font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px; padding-bottom: 5px; }
+            .desk-title { 
+                border-bottom: 2px solid #333; 
+                font-family: 'Playfair Display'; 
+                font-size: 1.8rem; 
+                margin-bottom: 15px; 
+                padding-bottom: 5px; 
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center; 
+            }
+            .desk-title span { font-size: 0.7rem; font-family: 'Libre Baskerville'; opacity: 0.5; }
             
             .horizontal-scroll { 
                 display: flex; 
@@ -29,22 +40,309 @@
                 flex: 0 0 350px; 
                 background: #fffefc; 
                 border: 1px solid #d1cec1; 
-                padding: 20px; 
-                box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+                padding: 25px; 
+                box-shadow: 4px 4px 0px rgba(0,0,0,0.05);
+                transition: transform 0.2s;
             }
+            .card:hover { transform: translateY(-5px); }
             
             .card-date { font-size: 10px; font-weight: bold; color: #777; margin-bottom: 10px; }
             h3 { font-family: 'Playfair Display'; font-size: 1.3rem; margin: 0 0 10px 0; line-height: 1.2; }
             h3 a { color: #1a1a1a; text-decoration: none; }
-            .meta { font-size: 11px; font-weight: bold; text-transform: uppercase; color: #555; }
+            .meta { font-size: 11px; font-weight: bold; text-transform: uppercase; color: #555; margin-bottom: 10px; display: block; }
             .text { font-size: 13px; line-height: 1.6; color: #333; }
+
+            .ai-accent { border-top: 6px solid #2c3e50; }
+            .nlp-accent { border-top: 6px solid #27ae60; }
+            .vision-accent { border-top: 6px solid #e67e22; }
         </style>
     </head>
     <body>
         <div class="masthead">
-            <h1>The Research Gazette</h1>
-            <p>TEMPE, AZ — FEBRUARY 13, 2026 — LATEST SUBMISSIONS</p>
+            <div style="font-size: 50px; margin-bottom: 10px;">🦉</div>
+            <h1>The Silicon Scroll</h1>
+            <p>TEMPE, AZ — FEBRUARY 13, 2026 — LATEST RESEARCH</p>
         </div>
+        
+        <section class="news-desk">
+            <h2 class="desk-title">AI & REINFORCEMENT DESK <span>SCROLL FOR MORE →</span></h2>
+            <div class="horizontal-scroll">
+                
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12125v1" target="_blank">Learning beyond Teacher: Generalized On-Policy Distillation with Reward Extrapolation</a></h3>
+                <p class="meta">By Wenkai Yang, Weijie Liu</p>
+                <p class="text">On-policy distillation (OPD), which aligns the student with the teacher's logit distribution on student-generated trajectories, has demonstrated strong empirical gains in improving student performance and often outperforms off-policy distillation and reinforcement learning (RL) p...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12124v1" target="_blank">Capability-Oriented Training Induced Alignment Risk</a></h3>
+                <p class="meta">By Yujun Zhou, Yue Huang</p>
+                <p class="text">While most AI alignment research focuses on preventing models from generating explicitly harmful content, a more subtle risk is emerging: capability-oriented training induced exploitation. We investigate whether language models, when trained with reinforcement learning (RL) in en...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12123v1" target="_blank">Meta-Sel: Efficient Demonstration Selection for In-Context Learning via Supervised Meta-Learning</a></h3>
+                <p class="meta">By Xubin Wang, Weijia Jia</p>
+                <p class="text">Demonstration selection is a practical bottleneck in in-context learning (ICL): under a tight prompt budget, accuracy can change substantially depending on which few-shot examples are included, yet selection must remain cheap enough to run per query over large candidate pools. We...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12120v1" target="_blank">Commencing-Student Enrolment Forecasting Under Data Sparsity with Time Series Foundation Models</a></h3>
+                <p class="meta">By Jittarin Jetwiriyanon, Teo Susnjak</p>
+                <p class="text">Many universities face increasing financial pressure and rely on accurate forecasts of commencing enrolments. However, enrolment forecasting in higher education is often data-sparse; annual series are short and affected by reporting changes and regime shifts. Popular classical ap...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12117v1" target="_blank">KAN-FIF: Spline-Parameterized Lightweight Physics-based Tropical Cyclone Estimation on Meteorological Satellite</a></h3>
+                <p class="meta">By Jiakang Shen, Qinghui Chen</p>
+                <p class="text">Tropical cyclones (TC) are among the most destructive natural disasters, causing catastrophic damage to coastal regions through extreme winds, heavy rainfall, and storm surges. Timely monitoring of tropical cyclones is crucial for reducing loss of life and property, yet it is hin...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12113v1" target="_blank">Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty</a></h3>
+                <p class="meta">By Zewei Yu, Lirong Gao</p>
+                <p class="text">Large Reasoning Models (LRMs) have demonstrated remarkable performance on complex reasoning tasks by employing test-time scaling. However, they often generate over-long chains-of-thought that, driven by substantial reflections such as repetitive self-questioning and circular reas...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12108v1" target="_blank">The Pensieve Paradigm: Stateful Language Models Mastering Their Own Context</a></h3>
+                <p class="meta">By Xiaoyuan Liu, Tian Liang</p>
+                <p class="text">In the world of Harry Potter, when Dumbledore's mind is overburdened, he extracts memories into a Pensieve to be revisited later. In the world of AI, while we possess the Pensieve-mature databases and retrieval systems, our models inexplicably lack the "wand" to operate it. They ...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12107v1" target="_blank">On the Complexity of Offline Reinforcement Learning with $Q^\star$-Approximation and Partial Coverage</a></h3>
+                <p class="meta">By Haolin Liu, Braham Snyder</p>
+                <p class="text">We study offline reinforcement learning under $Q^\star$-approximation and partial coverage, a setting that motivates practical algorithms such as Conservative $Q$-Learning (CQL; Kumar et al., 2020) but has received limited theoretical attention. Our work is inspired by the follow...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12105v1" target="_blank">Iskra: A System for Inverse Geometry Processing</a></h3>
+                <p class="meta">By Ana Dodik, Ahmed H. Mahmoud</p>
+                <p class="text">We propose a system for differentiating through solutions to geometry processing problems. Our system differentiates a broad class of geometric algorithms, exploiting existing fast problem-specific schemes common to geometry processing, including local-global and ADMM solvers. It...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12096v1" target="_blank">Multi Graph Search for High-Dimensional Robot Motion Planning</a></h3>
+                <p class="meta">By Itamar Mishani, Maxim Likhachev</p>
+                <p class="text">Efficient motion planning for high-dimensional robotic systems, such as manipulators and mobile manipulators, is critical for real-time operation and reliable deployment. Although advances in planning algorithms have enhanced scalability to high-dimensional state spaces, these im...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12089v1" target="_blank">Choose Your Agent: Tradeoffs in Adopting AI Advisors, Coaches, and Delegates in Multi-Party Negotiation</a></h3>
+                <p class="meta">By Kehang Zhu, Lithium Thain</p>
+                <p class="text">As AI usage becomes more prevalent in social contexts, understanding agent-user interaction is critical to designing systems that improve both individual and group outcomes. We present an online behavioral experiment (N = 243) in which participants play three multi-turn bargainin...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12083v1" target="_blank">Differentiable Modal Logic for Multi-Agent Diagnosis, Orchestration and Communication</a></h3>
+                <p class="meta">By Antonin Sulc</p>
+                <p class="text">As multi-agent AI systems evolve from simple chatbots to autonomous swarms, debugging semantic failures requires reasoning about knowledge, belief, causality, and obligation, precisely what modal logic was designed to formalize. However, traditional modal logic requires manual sp...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12078v1" target="_blank">Tiny Recursive Reasoning with Mamba-2 Attention Hybrid</a></h3>
+                <p class="meta">By Wenlong Wang, Fergal Reid</p>
+                <p class="text">Recent work on recursive reasoning models like TRM demonstrates that tiny networks (7M parameters) can achieve strong performance on abstract reasoning tasks through latent recursion -- iterative refinement in hidden representation space without emitting intermediate tokens. This...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12058v1" target="_blank">ModelWisdom: An Integrated Toolkit for TLA+ Model Visualization, Digest and Repair</a></h3>
+                <p class="meta">By Zhiyong Chen, Jialun Cao</p>
+                <p class="text">Model checking in TLA+ provides strong correctness guarantees, yet practitioners continue to face significant challenges in interpreting counterexamples, understanding large state-transition graphs, and repairing faulty models. These difficulties stem from the limited explainabil...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12056v1" target="_blank">LawThinker: A Deep Research Legal Agent in Dynamic Environments</a></h3>
+                <p class="meta">By Xinyu Yang, Chenlong Deng</p>
+                <p class="text">Legal reasoning requires not only correct outcomes but also procedurally compliant reasoning processes. However, existing methods lack mechanisms to verify intermediate reasoning steps, allowing errors such as inapplicable statute citations to propagate undetected through the rea...</p>
+            </div>
+            
+            </div>
+        </section>
+        
+        <section class="news-desk">
+            <h2 class="desk-title">NLP & LANGUAGE DESK <span>SCROLL FOR MORE →</span></h2>
+            <div class="horizontal-scroll">
+                
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12116v1" target="_blank">P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling</a></h3>
+                <p class="meta">By Pinyi Zhang, Ting-En Lin</p>
+                <p class="text">Personalized alignment of large language models seeks to adapt responses to individual user preferences, typically via reinforcement learning. A key challenge is obtaining accurate, user-specific reward signals in open-ended scenarios. Existing personalized reward models face two...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12092v1" target="_blank">DeepSight: An All-in-One LM Safety Toolkit</a></h3>
+                <p class="meta">By Bo Zhang, Jiaxuan Guo</p>
+                <p class="text">As the development of Large Models (LMs) progresses rapidly, their safety is also a priority. In current Large Language Models (LLMs) and Multimodal Large Language Models (MLLMs) safety workflow, evaluation, diagnosis, and alignment are often handled by separate tools. Specifical...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12036v1" target="_blank">Composition-RL: Compose Your Verifiable Prompts for Reinforcement Learning of Large Language Models</a></h3>
+                <p class="meta">By Xin Xu, Clive Bai</p>
+                <p class="text">Large-scale verifiable prompts underpin the success of Reinforcement Learning with Verifiable Rewards (RLVR), but they contain many uninformative examples and are costly to expand further. Recent studies focus on better exploiting limited training data by prioritizing hard prompt...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12015v1" target="_blank">Disentangling Ambiguity from Instability in Large Language Models: A Clinical Text-to-SQL Case Study</a></h3>
+                <p class="meta">By Angelo Ziletti, Leonardo D'Ambrosi</p>
+                <p class="text">Deploying large language models for clinical Text-to-SQL requires distinguishing two qualitatively different causes of output diversity: (i) input ambiguity that should trigger clarification, and (ii) model instability that should trigger human review. We propose CLUES, a framewo...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12005v1" target="_blank">LaCy: What Small Language Models Can and Should Learn is Not Just a Question of Loss</a></h3>
+                <p class="meta">By Szilvia Ujváry, Louis Béthune</p>
+                <p class="text">Language models have consistently grown to compress more world knowledge into their parameters, but the knowledge that can be pretrained into them is upper-bounded by their parameter size. Especially the capacity of Small Language Models (SLMs) is limited, leading to factually in...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11982v1" target="_blank">Automatic Simplification of Common Vulnerabilities and Exposures Descriptions</a></h3>
+                <p class="meta">By Varpu Vehomäki, Kimmo K. Kaski</p>
+                <p class="text">Understanding cyber security is increasingly important for individuals and organizations. However, a lot of information related to cyber security can be difficult to understand to those not familiar with the topic. In this study, we focus on investigating how large language model...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11968v1" target="_blank">DHPLT: large-scale multilingual diachronic corpora and word representations for semantic change modelling</a></h3>
+                <p class="meta">By Mariia Fedorova, Andrey Kutuzov</p>
+                <p class="text">In this resource paper, we present DHPLT, an open collection of diachronic corpora in 41 diverse languages. DHPLT is based on the web-crawled HPLT datasets; we use web crawl timestamps as the approximate signal of document creation time. The collection covers three time periods: ...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11961v1" target="_blank">Scaling Model and Data for Multilingual Machine Translation with Open Large Language Models</a></h3>
+                <p class="meta">By Yuzhe Shang, Pengzhi Gao</p>
+                <p class="text">Open large language models (LLMs) have demonstrated improving multilingual capabilities in recent years. In this paper, we present a study of open LLMs for multilingual machine translation (MT) across a range of languages, and investigate the effects of model scaling and data sca...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11939v1" target="_blank">Do Large Language Models Adapt to Language Variation across Socioeconomic Status?</a></h3>
+                <p class="meta">By Elisa Bassignana, Mike Zhang</p>
+                <p class="text">Humans adjust their linguistic style to the audience they are addressing. However, the extent to which LLMs adapt to different social contexts is largely unknown. As these models increasingly mediate human-to-human communication, their failure to adapt to diverse styles can perpe...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11938v1" target="_blank">Who is the richest club in the championship? Detecting and Rewriting Underspecified Questions Improve QA Performance</a></h3>
+                <p class="meta">By Yunchong Huang, Gianni Barlacchi</p>
+                <p class="text">Large language models (LLMs) perform well on well-posed questions, yet standard question-answering (QA) benchmarks remain far from solved. We argue that this gap is partly due to underspecified questions - queries whose interpretation cannot be uniquely determined without additio...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11933v1" target="_blank">Cross-Modal Robustness Transfer (CMRT): Training Robust Speech Translation Models Using Adversarial Text</a></h3>
+                <p class="meta">By Abderrahmane Issam, Yusuf Can Semerci</p>
+                <p class="text">End-to-End Speech Translation (E2E-ST) has seen significant advancements, yet current models are primarily benchmarked on curated, "clean" datasets. This overlooks critical real-world challenges, such as morphological robustness to inflectional variations common in non-native or ...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11931v1" target="_blank">AdaptEvolve: Improving Efficiency of Evolutionary AI Agents through Adaptive Model Selection</a></h3>
+                <p class="meta">By Pretam Ray, Pratik Prabhanjan Brahma</p>
+                <p class="text">Evolutionary agentic systems intensify the trade-off between computational efficiency and reasoning capability by repeatedly invoking large language models (LLMs) during inference. This setting raises a central question: how can an agent dynamically select an LLM that is sufficie...</p>
+            </div>
+            
+            </div>
+        </section>
+        
+        <section class="news-desk">
+            <h2 class="desk-title">VISION & MULTIMODAL DESK <span>SCROLL FOR MORE →</span></h2>
+            <div class="horizontal-scroll">
+                
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12100v1" target="_blank">AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer</a></h3>
+                <p class="meta">By Lingting Zhu, Shengju Qian</p>
+                <p class="text">The digital industry demands high-quality, diverse modular 3D assets, especially for user-generated content~(UGC). In this work, we introduce AssetFormer, an autoregressive Transformer-based model designed to generate modular 3D assets from textual descriptions. Our pilot study l...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12099v1" target="_blank">GigaBrain-0.5M*: a VLA That Learns From World Model-Based Reinforcement Learning</a></h3>
+                <p class="meta">By  GigaBrain Team, Boyuan Wang</p>
+                <p class="text">Vision-language-action (VLA) models that directly predict multi-step action chunks from current observations face inherent limitations due to constrained scene understanding and weak future anticipation capabilities. In contrast, video world models pre-trained on web-scale video ...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12044v1" target="_blank">A DMD-Based Adaptive Modulation Method for High Dynamic Range Imaging in High-Glare Environments</a></h3>
+                <p class="meta">By Banglei Guan, Jing Tao</p>
+                <p class="text">Background The accuracy of photomechanics measurements critically relies on image quality,particularly under extreme illumination conditions such as welding arc monitoring and polished metallic surface analysis. High dynamic range (HDR) imaging above 120 dB is essential in these ...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12003v1" target="_blank">Projected Representation Conditioning for High-fidelity Novel View Synthesis</a></h3>
+                <p class="meta">By Min-Seop Kwak, Minkyung Kwon</p>
+                <p class="text">We propose a novel framework for diffusion-based novel view synthesis in which we leverage external representations as conditions, harnessing their geometric and semantic correspondence properties for enhanced geometric consistency in generated novel viewpoints. First, we provide...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.12002v1" target="_blank">Can Local Vision-Language Models improve Activity Recognition over Vision Transformers? -- Case Study on Newborn Resuscitation</a></h3>
+                <p class="meta">By Enrico Guerriero, Kjersti Engan</p>
+                <p class="text">Accurate documentation of newborn resuscitation is essential for quality improvement and adherence to clinical guidelines, yet remains underutilized in practice. Previous work using 3D-CNNs and Vision Transformers (ViT) has shown promising results in detecting key activities from...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11980v1" target="_blank">Spatial Chain-of-Thought: Bridging Understanding and Generation Models for Spatial Reasoning Generation</a></h3>
+                <p class="meta">By Wei Chen, Yancheng Long</p>
+                <p class="text">While diffusion models have shown exceptional capabilities in aesthetic image synthesis, they often struggle with complex spatial understanding and reasoning. Existing approaches resort to Multimodal Large Language Models (MLLMs) to enhance this capability. However, they either i...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11973v1" target="_blank">Calibrated Bayesian Deep Learning for Explainable Decision Support Systems Based on Medical Imaging</a></h3>
+                <p class="meta">By Hua Xu, Julián D. Arias-Londoño</p>
+                <p class="text">In critical decision support systems based on medical imaging, the reliability of AI-assisted decision-making is as relevant as predictive accuracy. Although deep learning models have demonstrated significant accuracy, they frequently suffer from miscalibration, manifested as ove...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11960v1" target="_blank">Benchmarking Vision-Language Models for French PDF-to-Markdown Conversion</a></h3>
+                <p class="meta">By Bruno Rigal, Victor Dupriez</p>
+                <p class="text">This report evaluates PDF-to-Markdown conversion using recent Vision-Language Models (VLMs) on challenging French documents. Document parsing is a critical step for Retrieval-Augmented Generation (RAG) pipelines, where transcription and layout errors propagate to downstream retri...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11942v1" target="_blank">Synthesis of Late Gadolinium Enhancement Images via Implicit Neural Representations for Cardiac Scar Segmentation</a></h3>
+                <p class="meta">By Soufiane Ben Haddou, Laura Alvarez-Florez</p>
+                <p class="text">Late gadolinium enhancement (LGE) imaging is the clinical standard for myocardial scar assessment, but limited annotated datasets hinder the development of automated segmentation methods. We propose a novel framework that synthesises both LGE images and their corresponding segmen...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-12</div>
+                <h3><a href="http://arxiv.org/abs/2602.11919v1" target="_blank">DynaHOI: Benchmarking Hand-Object Interaction for Dynamic Target</a></h3>
+                <p class="meta">By BoCheng Hu, Zhonghan Zhao</p>
+                <p class="text">Most existing hand motion generation benchmarks for hand-object interaction (HOI) focus on static objects, leaving dynamic scenarios with moving targets and time-critical coordination largely untested. To address this gap, we introduce the DynaHOI-Gym, a unified online closed-loo...</p>
+            </div>
+            
+            </div>
+        </section>
         
     </body>
     </html>

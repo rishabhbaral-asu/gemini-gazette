@@ -2,12 +2,13 @@ import requests
 import datetime
 from bs4 import BeautifulSoup
 
-def fetch_arxiv_research(limit=60): # Fetch more to ensure we fill all 3 sections
+def fetch_arxiv_research(limit=60):
     print(f"🔬 Scoping {limit} papers across AI, CL, and CV...")
+    # Target specific AI categories
     url = f"https://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.CV&sortBy=submittedDate&sortOrder=descending&max_results={limit}"
     
     headers = {'User-Agent': 'Mozilla/5.0'}
-    sections = {'AI': [], 'NLP': [], 'VISION': []}
+    sections = {'AI & REINFORCEMENT': [], 'NLP & LANGUAGE': [], 'VISION & MULTIMODAL': []}
     
     try:
         res = requests.get(url, headers=headers)
@@ -24,13 +25,13 @@ def fetch_arxiv_research(limit=60): # Fetch more to ensure we fill all 3 section
                 'date': entry.published.text[:10]
             }
             
-            # Categorize into sections
+            # Map ArXiv categories to your "Desks"
             if primary_cat == 'cs.CL':
-                sections['NLP'].append(paper)
+                sections['NLP & LANGUAGE'].append(paper)
             elif primary_cat == 'cs.CV':
-                sections['VISION'].append(paper)
+                sections['VISION & MULTIMODAL'].append(paper)
             else:
-                sections['AI'].append(paper)
+                sections['AI & REINFORCEMENT'].append(paper)
                 
         return sections
     except Exception as e:
@@ -40,14 +41,22 @@ def fetch_arxiv_research(limit=60): # Fetch more to ensure we fill all 3 section
 def publish_sectioned_gazette(sections):
     today = datetime.datetime.now().strftime("%B %d, %Y").upper()
     
+    # 1. THE STAMPING LOGIC: This builds the paper cards for the HTML
     sections_html = ""
+    accent_map = {
+        'AI & REINFORCEMENT': 'ai-accent',
+        'NLP & LANGUAGE': 'nlp-accent',
+        'VISION & MULTIMODAL': 'vision-accent'
+    }
+
     for name, papers in sections.items():
         if not papers: continue
         
         paper_cards = ""
-        for p in papers[:15]: # Limit to top 15 per scrollable row
+        for p in papers[:15]: 
+            accent = accent_map.get(name, '')
             paper_cards += f"""
-            <div class="card">
+            <div class="card {accent}">
                 <div class="card-date">{p['date']}</div>
                 <h3><a href="{p['link']}" target="_blank">{p['title']}</a></h3>
                 <p class="meta">By {", ".join(p['authors'])}</p>
@@ -57,27 +66,39 @@ def publish_sectioned_gazette(sections):
         
         sections_html += f"""
         <section class="news-desk">
-            <h2 class="desk-title">{name} DESK</h2>
+            <h2 class="desk-title">{name} DESK <span>SCROLL FOR MORE →</span></h2>
             <div class="horizontal-scroll">
                 {paper_cards}
             </div>
         </section>
         """
 
+    # 2. THE BLUEPRINT: The structure of your website
     html = f"""
     <!DOCTYPE html>
-    <html>
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <title>The Silicon Scroll | AI Research</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Libre+Baskerville:wght@400;700&display=swap');
             
             body {{ background: #f4f1ea; color: #1a1a1a; font-family: 'Libre Baskerville', serif; margin: 0; padding: 2vw; }}
-            .masthead {{ text-align: center; border-bottom: 5px double #333; margin-bottom: 40px; }}
+            .masthead {{ text-align: center; border-bottom: 5px double #333; margin-bottom: 40px; padding-bottom: 15px; }}
             .masthead h1 {{ font-family: 'Playfair Display'; font-size: 5rem; margin: 0; letter-spacing: -2px; }}
             
             .news-desk {{ margin-bottom: 50px; }}
-            .desk-title {{ border-bottom: 2px solid #333; font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 15px; padding-bottom: 5px; }}
+            .desk-title {{ 
+                border-bottom: 2px solid #333; 
+                font-family: 'Playfair Display'; 
+                font-size: 1.8rem; 
+                margin-bottom: 15px; 
+                padding-bottom: 5px; 
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center; 
+            }}
+            .desk-title span {{ font-size: 0.7rem; font-family: 'Libre Baskerville'; opacity: 0.5; }}
             
             .horizontal-scroll {{ 
                 display: flex; 
@@ -95,21 +116,28 @@ def publish_sectioned_gazette(sections):
                 flex: 0 0 350px; 
                 background: #fffefc; 
                 border: 1px solid #d1cec1; 
-                padding: 20px; 
-                box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+                padding: 25px; 
+                box-shadow: 4px 4px 0px rgba(0,0,0,0.05);
+                transition: transform 0.2s;
             }}
+            .card:hover {{ transform: translateY(-5px); }}
             
             .card-date {{ font-size: 10px; font-weight: bold; color: #777; margin-bottom: 10px; }}
             h3 {{ font-family: 'Playfair Display'; font-size: 1.3rem; margin: 0 0 10px 0; line-height: 1.2; }}
             h3 a {{ color: #1a1a1a; text-decoration: none; }}
-            .meta {{ font-size: 11px; font-weight: bold; text-transform: uppercase; color: #555; }}
+            .meta {{ font-size: 11px; font-weight: bold; text-transform: uppercase; color: #555; margin-bottom: 10px; display: block; }}
             .text {{ font-size: 13px; line-height: 1.6; color: #333; }}
+
+            .ai-accent {{ border-top: 6px solid #2c3e50; }}
+            .nlp-accent {{ border-top: 6px solid #27ae60; }}
+            .vision-accent {{ border-top: 6px solid #e67e22; }}
         </style>
     </head>
     <body>
         <div class="masthead">
-            <h1>The Research Gazette</h1>
-            <p>TEMPE, AZ — {today} — LATEST SUBMISSIONS</p>
+            <div style="font-size: 50px; margin-bottom: 10px;">🦉</div>
+            <h1>The Silicon Scroll</h1>
+            <p>TEMPE, AZ — {today} — LATEST RESEARCH</p>
         </div>
         {sections_html}
     </body>
@@ -117,7 +145,7 @@ def publish_sectioned_gazette(sections):
     """
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html)
-    print("✅ Gazette published with scrollable sections.")
+    print("✅ Gazette published: The Silicon Scroll is ready.")
 
 if __name__ == "__main__":
     data = fetch_arxiv_research()

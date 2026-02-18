@@ -3,7 +3,7 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>The Silicon Scroll | AI Research</title>
+        <title>The Silicon Scroll | Weekly Research</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Libre+Baskerville:wght@400;700&display=swap');
             
@@ -43,6 +43,8 @@
                 padding: 25px; 
                 box-shadow: 4px 4px 0px rgba(0,0,0,0.05);
                 transition: transform 0.2s;
+                display: flex;
+                flex-direction: column;
             }
             .card:hover { transform: translateY(-5px); }
             
@@ -50,7 +52,7 @@
             h3 { font-family: 'Playfair Display'; font-size: 1.3rem; margin: 0 0 10px 0; line-height: 1.2; }
             h3 a { color: #1a1a1a; text-decoration: none; }
             .meta { font-size: 11px; font-weight: bold; text-transform: uppercase; color: #555; margin-bottom: 10px; display: block; }
-            .text { font-size: 13px; line-height: 1.6; color: #333; }
+            .text { font-size: 13px; line-height: 1.6; color: #333; flex-grow: 1; }
 
             .ai-accent { border-top: 6px solid #2c3e50; }
             .nlp-accent { border-top: 6px solid #27ae60; }
@@ -61,228 +63,599 @@
         <div class="masthead">
             <div style="font-size: 50px; margin-bottom: 10px;">🦉</div>
             <h1>The Silicon Scroll</h1>
-            <p>TEMPE, AZ — FEBRUARY 18, 2026 — LATEST RESEARCH</p>
+            <p>TEMPE, AZ — FEBRUARY 18, 2026 — WEEKLY INTELLIGENCE</p>
         </div>
         
         <section class="news-desk">
-            <h2 class="desk-title">AI & REINFORCEMENT DESK <span>SCROLL FOR MORE →</span></h2>
+            <h2 class="desk-title">AI & REINFORCEMENT DESK <span>264 PAPERS THIS WEEK</span></h2>
             <div class="horizontal-scroll">
                 
             <div class="card ai-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15828v1" target="_blank">Dex4D: Task-Agnostic Point Track Policy for Sim-to-Real Dexterous Manipulation</a></h3>
-                <p class="meta">By Yuxuan Kuang, Sungjae Park</p>
-                <p class="text">Learning generalist policies capable of accomplishing a plethora of everyday tasks remains an open challenge in dexterous manipulation. In particular, collecting large-scale manipulation data via real-world teleoperation is expensive and difficult to scale. While learning in simu...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15827v1" target="_blank">Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching</a></h3>
-                <p class="meta">By Zhen Wu, Xiaoyu Huang</p>
-                <p class="text">While recent advances in humanoid locomotion have achieved stable walking on varied terrains, capturing the agility and adaptivity of highly dynamic human motions remains an open challenge. In particular, agile parkour in complex environments demands not only low-level robustness...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15823v1" target="_blank">CrispEdit: Low-Curvature Projections for Scalable Non-Destructive LLM Editing</a></h3>
-                <p class="meta">By Zarif Ikram, Arad Firouzkouhi</p>
-                <p class="text">A central challenge in large language model (LLM) editing is capability preservation: methods that successfully change targeted behavior can quietly game the editing proxy and corrupt general capabilities, producing degenerate behaviors reminiscent of proxy/reward hacking. We pre...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15816v1" target="_blank">Developing AI Agents with Simulated Data: Why, what, and how?</a></h3>
-                <p class="meta">By Xiaoran Liu, Istvan David</p>
-                <p class="text">As insufficient data volume and quality remain the key impediments to the adoption of modern subsymbolic AI, techniques of synthetic data generation are in high demand. Simulation offers an apt, systematic approach to generating diverse synthetic data. This chapter introduces the...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15809v1" target="_blank">Decision Quality Evaluation Framework at Pinterest</a></h3>
-                <p class="meta">By Yuqi Tian, Robert Paine</p>
-                <p class="text">Online platforms require robust systems to enforce content safety policies at scale. A critical component of these systems is the ability to evaluate the quality of moderation decisions made by both human agents and Large Language Models (LLMs). However, this evaluation is challe...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15799v1" target="_blank">The Geometry of Alignment Collapse: When Fine-Tuning Breaks Safety</a></h3>
-                <p class="meta">By Max Springer, Chung Peng Lee</p>
-                <p class="text">Fine-tuning aligned language models on benign tasks unpredictably degrades safety guardrails, even when training data contains no harmful content and developers have no adversarial intent. We show that the prevailing explanation, that fine-tuning updates should be orthogonal to s...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15791v1" target="_blank">Enhancing Building Semantics Preservation in AI Model Training with Large Language Model Encodings</a></h3>
-                <p class="meta">By Suhyung Jang, Ghang Lee</p>
-                <p class="text">Accurate representation of building semantics, encompassing both generic object types and specific subtypes, is essential for effective AI model training in the architecture, engineering, construction, and operation (AECO) industry. Conventional encoding methods (e.g., one-hot) o...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15785v1" target="_blank">This human study did not involve human subjects: Validating LLM simulations as behavioral evidence</a></h3>
-                <p class="meta">By Jessica Hullman, David Broska</p>
-                <p class="text">A growing literature uses large language models (LLMs) as synthetic participants to generate cost-effective and nearly instantaneous responses in social science experiments. However, there is limited guidance on when such simulations support valid inference about human behavior. ...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15776v1" target="_blank">GlobeDiff: State Diffusion Process for Partial Observability in Multi-Agent Systems</a></h3>
-                <p class="meta">By Yiqin Yang, Xu Yang</p>
-                <p class="text">In the realm of multi-agent systems, the challenge of \emph{partial observability} is a critical barrier to effective coordination and decision-making. Existing approaches, such as belief state estimation and inter-agent communication, often fall short. Belief-based methods are l...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15767v1" target="_blank">Robot-Assisted Social Dining as a White Glove Service</a></h3>
-                <p class="meta">By Atharva S Kashyap, Ugne Aleksandra Morkute</p>
-                <p class="text">Robot-assisted feeding enables people with disabilities who require assistance eating to enjoy a meal independently and with dignity. However, existing systems have only been tested in-lab or in-home, leaving in-the-wild social dining contexts (e.g., restaurants) largely unexplor...</p>
-            </div>
-            
-            <div class="card ai-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15763v1" target="_blank">GLM-5: from Vibe Coding to Agentic Engineering</a></h3>
+                <h3><a href="http://arxiv.org/abs/2602.15763v1" target="_blank">🔥 GLM-5: from Vibe Coding to Agentic Engineering</a></h3>
                 <p class="meta">By GLM-5 Team,  :</p>
                 <p class="text">We present GLM-5, a next-generation foundation model designed to transition the paradigm of vibe coding to agentic engineering. Building upon the agentic, reasoning, and coding (ARC) capabilities of its predecessor, GLM-5 adopts DSA to significantly reduce training and inference ...</p>
             </div>
             
             <div class="card ai-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15750v1" target="_blank">UrbanVerse: Learning Urban Region Representation Across Cities and Tasks</a></h3>
-                <p class="meta">By Fengze Sun, Egemen Tanin</p>
-                <p class="text">Recent advances in urban region representation learning have enabled a wide range of applications in urban analytics, yet existing methods remain limited in their capabilities to generalize across cities and analytic tasks. We aim to generalize urban representation learning beyon...</p>
+                <h3><a href="http://arxiv.org/abs/2602.15721v1" target="_blank">🔥 Lifelong Scalable Multi-Agent Realistic Testbed and A Comprehensive Study on Design Choices in Lifelong AGV Fleet Management Systems</a></h3>
+                <p class="meta">By Jingtian Yan, Yulun Zhang</p>
+                <p class="text">We present Lifelong Scalable Multi-Agent Realistic Testbed (LSMART), an open-source simulator to evaluate any Multi-Agent Path Finding (MAPF) algorithm in a Fleet Management System (FMS) with Automated Guided Vehicles (AGVs). MAPF aims to move a group of agents from their corresp...</p>
             </div>
             
             <div class="card ai-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15740v1" target="_blank">MRC-GAT: A Meta-Relational Copula-Based Graph Attention Network for Interpretable Multimodal Alzheimer's Disease Diagnosis</a></h3>
-                <p class="meta">By Fatemeh Khalvandi, Saadat Izadi</p>
-                <p class="text">Alzheimer's disease (AD) is a progressive neurodegenerative condition necessitating early and precise diagnosis to provide prompt clinical management. Given the paramount importance of early diagnosis, recent studies have increasingly focused on computer-aided diagnostic models t...</p>
+                <h3><a href="http://arxiv.org/abs/2602.15549v1" target="_blank">🔥 VLM-DEWM: Dynamic External World Model for Verifiable and Resilient Vision-Language Planning in Manufacturing</a></h3>
+                <p class="meta">By Guoqin Tang, Qingxuan Jia</p>
+                <p class="text">Vision-language model (VLM) shows promise for high-level planning in smart manufacturing, yet their deployment in dynamic workcells faces two critical challenges: (1) stateless operation, they cannot persistently track out-of-view states, causing world-state drift; and (2) opaque...</p>
             </div>
             
             <div class="card ai-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15733v1" target="_blank">MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction</a></h3>
-                <p class="meta">By Qiang Zhang, Jiahao Ma</p>
-                <p class="text">Humanoid motion control has witnessed significant breakthroughs in recent years, with deep reinforcement learning (RL) emerging as a primary catalyst for achieving complex, human-like behaviors. However, the high dimensionality and intricate dynamics of humanoid robots make manua...</p>
+                <h3><a href="http://arxiv.org/abs/2602.15325v1" target="_blank">🔥 AgriWorld:A World Tools Protocol Framework for Verifiable Agricultural Reasoning with Code-Executing LLM Agents</a></h3>
+                <p class="meta">By Zhixing Zhang, Jesen Zhang</p>
+                <p class="text">Foundation models for agriculture are increasingly trained on massive spatiotemporal data (e.g., multi-spectral remote sensing, soil grids, and field-level management logs) and achieve strong performance on forecasting and monitoring. However, these models lack language-based rea...</p>
             </div>
             
             <div class="card ai-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15725v1" target="_blank">Recursive Concept Evolution for Compositional Reasoning in Large Language Models</a></h3>
-                <p class="meta">By Sarim Chaudhry</p>
-                <p class="text">Large language models achieve strong performance on many complex reasoning tasks, yet their accuracy degrades sharply on benchmarks that require compositional reasoning, including ARC-AGI-2, GPQA, MATH, BBH, and HLE. Existing methods improve reasoning by expanding token-level sea...</p>
+                <h3><a href="http://arxiv.org/abs/2602.15294v1" target="_blank">🔥 EAA: Automating materials characterization with vision language model agents</a></h3>
+                <p class="meta">By Ming Du, Yanqi Luo</p>
+                <p class="text">We present Experiment Automation Agents (EAA), a vision-language-model-driven agentic system designed to automate complex experimental microscopy workflows. EAA integrates multimodal reasoning, tool-augmented action, and optional long-term memory to support both autonomous proced...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.15212v1" target="_blank">🔥 Secure and Energy-Efficient Wireless Agentic AI Networks</a></h3>
+                <p class="meta">By Yuanyan Song, Kezhi Wang</p>
+                <p class="text">In this paper, we introduce a secure wireless agentic AI network comprising one supervisor AI agent and multiple other AI agents to provision quality of service (QoS) for users' reasoning tasks while ensuring confidentiality of private knowledge and reasoning outcomes. Specifical...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.15173v1" target="_blank">🔥 Mind the (DH) Gap! A Contrast in Risky Choices Between Reasoning and Conversational LLMs</a></h3>
+                <p class="meta">By Luise Ge, Yongyan Zhang</p>
+                <p class="text">The use of large language models either as decision support systems, or in agentic workflows, is rapidly transforming the digital ecosystem. However, the understanding of LLM decision-making under uncertainty remains limited. We initiate a comparative study of LLM risky choices a...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14926v1" target="_blank">🔥 MAC-AMP: A Closed-Loop Multi-Agent Collaboration System for Multi-Objective Antimicrobial Peptide Design</a></h3>
+                <p class="meta">By Gen Zhou, Sugitha Janarthanan</p>
+                <p class="text">To address the global health threat of antimicrobial resistance, antimicrobial peptides (AMP) are being explored for their potent and promising ability to fight resistant pathogens. While artificial intelligence (AI) is being employed to advance AMP discovery and design, most AMP...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14857v1" target="_blank">🔥 World Models for Policy Refinement in StarCraft II</a></h3>
+                <p class="meta">By Yixin Zhang, Ziyi Wang</p>
+                <p class="text">Large Language Models (LLMs) have recently shown strong reasoning and generalization capabilities, motivating their use as decision-making policies in complex environments. StarCraft II (SC2), with its massive state-action space and partial observability, is a challenging testbed...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14721v1" target="_blank">🔥 WebWorld: A Large-Scale World Model for Web Agent Training</a></h3>
+                <p class="meta">By Zikai Xiao, Jianhong Tu</p>
+                <p class="text">Web agents require massive trajectories to generalize, yet real-world training is constrained by network latency, rate limits, and safety risks. We introduce \textbf{WebWorld} series, the first open-web simulator trained at scale. While existing simulators are restricted to close...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14697v1" target="_blank">🔥 Evolutionary System Prompt Learning can Facilitate Reinforcement Learning for LLMs</a></h3>
+                <p class="meta">By Lunjun Zhang, Ryan Chen</p>
+                <p class="text">Building agentic systems that can autonomously self-improve from experience is a longstanding goal of AI. Large language models (LLMs) today primarily self-improve via two mechanisms: self-reflection for context updates, and reinforcement learning (RL) for weight updates. In this...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14691v1" target="_blank">🔥 Removing Planner Bias in Goal Recognition Through Multi-Plan Dataset Generation</a></h3>
+                <p class="meta">By Mustafa F. Abdelwahed, Felipe Meneguzzi Kin Max Piamolini Gusmao</p>
+                <p class="text">Autonomous agents require some form of goal and plan recognition to interact in multiagent settings. Unfortunately, all existing goal recognition datasets suffer from a systematical bias induced by the planning systems that generated them, namely heuristic-based forward search. T...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14606v1" target="_blank">🔥 Towards Selection as Power: Bounding Decision Authority in Autonomous Agents</a></h3>
+                <p class="meta">By Jose Manuel de la Chica Rodriguez, Juan Manuel Vera Díaz</p>
+                <p class="text">Autonomous agentic systems are increasingly deployed in regulated, high-stakes domains where decisions may be irreversible and institutionally constrained. Existing safety approaches emphasize alignment, interpretability, or action-level filtering. We argue that these mechanisms ...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14559v1" target="_blank">🔥 Fluid-Agent Reinforcement Learning</a></h3>
+                <p class="meta">By Shishir Sharma, Doina Precup</p>
+                <p class="text">The primary focus of multi-agent reinforcement learning (MARL) has been to study interactions among a fixed number of agents embedded in an environment. However, in the real world, the number of agents is neither fixed nor known a priori. Moreover, an agent can decide to create o...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14471v1" target="_blank">🔥 Socially-Weighted Alignment: A Game-Theoretic Framework for Multi-Agent LLM Systems</a></h3>
+                <p class="meta">By Furkan Mumcu, Yasin Yilmaz</p>
+                <p class="text">Deploying large language model (LLM) agents in shared environments introduces a fundamental tension between individual alignment and collective stability: locally rational decisions can impose negative externalities that degrade system-level performance. We propose Socially-Weigh...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14351v1" target="_blank">🔥 WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control</a></h3>
+                <p class="meta">By Mehran Aghabozorgi, Alireza Moazeni</p>
+                <p class="text">Model-based reinforcement learning promises strong sample efficiency but often underperforms in practice due to compounding model error, unimodal world models that average over multi-modal dynamics, and overconfident predictions that bias learning. We introduce WIMLE, a model-bas...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14345v1" target="_blank">🔥 AXE: An Agentic eXploit Engine for Confirming Zero-Day Vulnerability Reports</a></h3>
+                <p class="meta">By Amirali Sajadi, Tu Nguyen</p>
+                <p class="text">Vulnerability detection tools are widely adopted in software projects, yet they often overwhelm maintainers with false positives and non-actionable reports. Automated exploitation systems can help validate these reports; however, existing approaches typically operate in isolation...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14293v1" target="_blank">🔥 KernelBlaster: Continual Cross-Task CUDA Optimization via Memory-Augmented In-Context Reinforcement Learning</a></h3>
+                <p class="meta">By Kris Shengjun Dong, Sahil Modi</p>
+                <p class="text">Optimizing CUDA code across multiple generations of GPU architectures is challenging, as achieving peak performance requires an extensive exploration of an increasingly complex, hardware-specific optimization space. Traditional compilers are constrained by fixed heuristics, where...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14281v1" target="_blank">🔥 MCPShield: A Security Cognition Layer for Adaptive Trust Calibration in Model Context Protocol Agents</a></h3>
+                <p class="meta">By Zhenhong Zhou, Yuanhe Zhang</p>
+                <p class="text">The Model Context Protocol (MCP) standardizes tool use for LLM-based agents and enable third-party servers. This openness introduces a security misalignment: agents implicitly trust tools exposed by potentially untrusted MCP servers. However, despite its excellent utility, existi...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14229v1" target="_blank">🔥 CORPGEN: Simulating Corporate Environments with Autonomous Digital Employees in Multi-Horizon Task Environments</a></h3>
+                <p class="meta">By Abubakarr Jaye, Nigel Boachie Kumankumah</p>
+                <p class="text">Long-horizon reasoning is a key challenge for autonomous agents, yet existing benchmarks evaluate agents on single tasks in isolation. Real organizational work requires managing many concurrent long-horizon tasks with interleaving, dependencies, and reprioritization. We introduce...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14225v1" target="_blank">🔥 Text Before Vision: Staged Knowledge Injection Matters for Agentic RLVR in Ultra-High-Resolution Remote Sensing Understanding</a></h3>
+                <p class="meta">By Fengxiang Wang, Mingshuo Chen</p>
+                <p class="text">Multimodal reasoning for ultra-high-resolution (UHR) remote sensing (RS) is usually bottlenecked by visual evidence acquisition: the model necessitates localizing tiny task-relevant regions in massive pixel spaces. While Agentic Reinforcement Learning with Verifiable Rewards (RLV...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14160v1" target="_blank">🔥 Process-Supervised Multi-Agent Reinforcement Learning for Reliable Clinical Reasoning</a></h3>
+                <p class="meta">By Chaeeun Lee, T. Michael Yates</p>
+                <p class="text">Clinical decision-making requires nuanced reasoning over heterogeneous evidence and traceable justifications. While recent LLM multi-agent systems (MAS) show promise, they largely optimise for outcome accuracy while overlooking process-grounded reasoning aligned with clinical sta...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14089v1" target="_blank">🔥 TabTracer: Monte Carlo Tree Search for Complex Table Reasoning with Large Language Models</a></h3>
+                <p class="meta">By Zhizhao Luo, Zhaojing Luo</p>
+                <p class="text">Large language models (LLMs) have emerged as powerful tools for natural language table reasoning, where there are two main categories of methods. Prompt-based approaches rely on language-only inference or one-pass program generation without step-level verification. Agent-based ap...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14083v1" target="_blank">🔥 Plan-MCTS: Plan Exploration for Action Exploitation in Web Navigation</a></h3>
+                <p class="meta">By Weiming Zhang, Jihong Wang</p>
+                <p class="text">Large Language Models (LLMs) have empowered autonomous agents to handle complex web navigation tasks. While recent studies integrate tree search to enhance long-horizon reasoning, applying these algorithms in web navigation faces two critical challenges: sparse valid paths that l...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.13977v1" target="_blank">🔥 WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL</a></h3>
+                <p class="meta">By Zhennan Jiang, Shangqing Zhou</p>
+                <p class="text">Reinforcement learning (RL) promises to unlock capabilities beyond imitation learning for Vision-Language-Action (VLA) models, but its requirement for massive real-world interaction prevents direct deployment on physical robots. Recent work attempts to use learned world models as...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.13949v1" target="_blank">🔥 Experiential Reinforcement Learning</a></h3>
+                <p class="meta">By Taiwei Shi, Sihao Chen</p>
+                <p class="text">Reinforcement learning has become the central approach for language models (LMs) to learn from environmental reward or feedback. In practice, the environmental feedback is usually sparse and delayed. Learning from such signals is challenging, as LMs must implicitly infer how obse...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15776v1" target="_blank">🔥 GlobeDiff: State Diffusion Process for Partial Observability in Multi-Agent Systems</a></h3>
+                <p class="meta">By Yiqin Yang, Xu Yang</p>
+                <p class="text">In the realm of multi-agent systems, the challenge of \emph{partial observability} is a critical barrier to effective coordination and decision-making. Existing approaches, such as belief state estimation and inter-agent communication, often fall short. Belief-based methods are l...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15384v1" target="_blank">🔥 World-Model-Augmented Web Agents with Action Correction</a></h3>
+                <p class="meta">By Zhouzhou Shen, Xueyu Hu</p>
+                <p class="text">Web agents based on large language models have demonstrated promising capability in automating web tasks. However, current web agents struggle to reason out sensible actions due to the limitations of predicting environment changes, and might not possess comprehensive awareness of...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.15198v1" target="_blank">🔥 Colosseum: Auditing Collusion in Cooperative Multi-Agent Systems</a></h3>
+                <p class="meta">By Mason Nakamura, Abhinav Kumar</p>
+                <p class="text">Multi-agent systems, where LLM agents communicate through free-form language, enable sophisticated coordination for solving complex cooperative tasks. This surfaces a unique safety problem when individual agents form a coalition and \emph{collude} to pursue secondary goals and de...</p>
+            </div>
+            
+            <div class="card ai-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.15112v1" target="_blank">🔥 ResearchGym: Evaluating Language Model Agents on Real-World AI Research</a></h3>
+                <p class="meta">By Aniketh Garikaparthi, Manasi Patwardhan</p>
+                <p class="text">We introduce ResearchGym, a benchmark and execution environment for evaluating AI agents on end-to-end research. To instantiate this, we repurpose five oral and spotlight papers from ICML, ICLR, and ACL. From each paper's repository, we preserve the datasets, evaluation harness, ...</p>
             </div>
             
             </div>
         </section>
         
         <section class="news-desk">
-            <h2 class="desk-title">NLP & LANGUAGE DESK <span>SCROLL FOR MORE →</span></h2>
+            <h2 class="desk-title">NLP & LANGUAGE DESK <span>103 PAPERS THIS WEEK</span></h2>
             <div class="horizontal-scroll">
                 
             <div class="card nlp-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15814v1" target="_blank">Avey-B</a></h3>
-                <p class="meta">By Devang Acharya, Mohammad Hammoud</p>
-                <p class="text">Compact pretrained bidirectional encoders remain the backbone of industrial NLP under tight compute and memory budgets. Their effectiveness stems from self-attention's ability to deliver high-quality bidirectional contextualization with sequence-level parallelism, as popularized ...</p>
+                <h3><a href="http://arxiv.org/abs/2602.15382v1" target="_blank">🔥 The Vision Wormhole: Latent-Space Communication in Heterogeneous Multi-Agent Systems</a></h3>
+                <p class="meta">By Xiaoze Liu, Ruowang Zhang</p>
+                <p class="text">Multi-Agent Systems (MAS) powered by Large Language Models have unlocked advanced collaborative reasoning, yet they remain shackled by the inefficiency of discrete text communication, which imposes significant runtime overhead and information quantization loss. While latent state...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.15012v1" target="_blank">🔥 Cold-Start Personalization via Training-Free Priors from Structured World Models</a></h3>
+                <p class="meta">By Avinandan Bose, Shuyue Stella Li</p>
+                <p class="text">Cold-start personalization requires inferring user preferences through interaction when no user-specific historical data is available. The core challenge is a routing problem: each task admits dozens of preference dimensions, yet individual users care about only a few, and which ...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14955v1" target="_blank">🔥 Tool-Aware Planning in Contact Center AI: Evaluating LLMs through Lineage-Guided Query Decomposition</a></h3>
+                <p class="meta">By Varun Nathan, Shreyas Guha</p>
+                <p class="text">We present a domain-grounded framework and benchmark for tool-aware plan generation in contact centers, where answering a query for business insights, our target use case, requires decomposing it into executable steps over structured tools (Text2SQL (T2S)/Snowflake) and unstructu...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14158v1" target="_blank">🔥 A Multi-Agent Framework for Medical AI: Leveraging Fine-Tuned GPT, LLaMA, and DeepSeek R1 for Evidence-Based and Bias-Aware Clinical Query Processing</a></h3>
+                <p class="meta">By Naeimeh Nourmohammadi, Md Meem Hossain</p>
+                <p class="text">Large language models (LLMs) show promise for healthcare question answering, but clinical use is limited by weak verification, insufficient evidence grounding, and unreliable confidence signalling. We propose a multi-agent medical QA framework that combines complementary LLMs wit...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.15197v1" target="_blank">🔥 OpaqueToolsBench: Learning Nuances of Tool Behavior Through Interaction</a></h3>
+                <p class="meta">By Skyler Hallinan, Thejas Venkatesh</p>
+                <p class="text">Tool-calling is essential for Large Language Model (LLM) agents to complete real-world tasks. While most existing benchmarks assume simple, perfectly documented tools, real-world tools (e.g., general "search" APIs) are often opaque, lacking clear best practices or failure modes. ...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14778v1" target="_blank">🔥 A Geometric Analysis of Small-sized Language Model Hallucinations</a></h3>
+                <p class="meta">By Emanuele Ricco, Elia Onofri</p>
+                <p class="text">Hallucinations -- fluent but factually incorrect responses -- pose a major challenge to the reliability of language models, especially in multi-step or agentic settings.   This work investigates hallucinations in small-sized LLMs through a geometric perspective, starting from the...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14770v2" target="_blank">🔥 Multi-Agent Comedy Club: Investigating Community Discussion Effects on LLM Humor Generation</a></h3>
+                <p class="meta">By Shiwei Hong, Lingyao Li</p>
+                <p class="text">Prior work has explored multi-turn interaction and feedback for LLM writing, but evaluations still largely center on prompts and localized feedback, leaving persistent public reception in online communities underexamined. We test whether broadcast community discussion improves st...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14299v1" target="_blank">🔥 Does Socialization Emerge in AI Agent Society? A Case Study of Moltbook</a></h3>
+                <p class="meta">By Ming Li, Xirui Li</p>
+                <p class="text">As large language model agents increasingly populate networked environments, a fundamental question arises: do artificial intelligence (AI) agent societies undergo convergence dynamics similar to human social systems? Lately, Moltbook approximates a plausible future scenario in w...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-14</div>
+                <h3><a href="http://arxiv.org/abs/2602.13840v1" target="_blank">🔥 PrivAct: Internalizing Contextual Privacy Preservation via Multi-Agent Preference Training</a></h3>
+                <p class="meta">By Yuhan Cheng, Hancheng Ye</p>
+                <p class="text">Large language model (LLM) agents are increasingly deployed in personalized tasks involving sensitive, context-dependent information, where privacy violations may arise in agents' action due to the implicitness of contextual privacy. Existing approaches rely on external, inferenc...</p>
             </div>
             
             <div class="card nlp-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15778v1" target="_blank">*-PLUIE: Personalisable metric with Llm Used for Improved Evaluation</a></h3>
-                <p class="meta">By Quentin Lemesle, Léane Jourdan</p>
-                <p class="text">Evaluating the quality of automatically generated text often relies on LLM-as-a-judge (LLM-judge) methods. While effective, these approaches are computationally expensive and require post-processing. To address these limitations, we build upon ParaPLUIE, a perplexity-based LLM-ju...</p>
-            </div>
-            
-            <div class="card nlp-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15769v1" target="_blank">ViTaB-A: Evaluating Multimodal Large Language Models on Visual Table Attribution</a></h3>
-                <p class="meta">By Yahia Alqurnawi, Preetom Biswas</p>
-                <p class="text">Multimodal Large Language Models (mLLMs) are often used to answer questions in structured data such as tables in Markdown, JSON, and images. While these models can often give correct answers, users also need to know where those answers come from. In this work, we study structured...</p>
-            </div>
-            
-            <div class="card nlp-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15758v1" target="_blank">ChartEditBench: Evaluating Grounded Multi-Turn Chart Editing in Multimodal Language Models</a></h3>
-                <p class="meta">By Manav Nitin Kapadnis, Lawanya Baghel</p>
-                <p class="text">While Multimodal Large Language Models (MLLMs) perform strongly on single-turn chart generation, their ability to support real-world exploratory data analysis remains underexplored. In practice, users iteratively refine visualizations through multi-turn interactions that require ...</p>
-            </div>
-            
-            <div class="card nlp-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15757v1" target="_blank">Beyond Binary Classification: Detecting Fine-Grained Sexism in Social Media Videos</a></h3>
-                <p class="meta">By Laura De Grazia, Danae Sánchez Villegas</p>
-                <p class="text">Online sexism appears in various forms, which makes its detection challenging. Although automated tools can enhance the identification of sexist content, they are often restricted to binary classification. Consequently, more subtle manifestations of sexism may remain undetected d...</p>
-            </div>
-            
-            <div class="card nlp-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15753v1" target="_blank">Under-resourced studies of under-resourced languages: lemmatization and POS-tagging with LLM annotators for historical Armenian, Georgian, Greek and Syriac</a></h3>
-                <p class="meta">By Chahan Vidal-Gorène, Bastien Kindt</p>
-                <p class="text">Low-resource languages pose persistent challenges for Natural Language Processing tasks such as lemmatization and part-of-speech (POS) tagging. This paper investigates the capacity of recent large language models (LLMs), including GPT-4 variants and open-weight Mistral models, to...</p>
-            </div>
-            
-            <div class="card nlp-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15730v1" target="_blank">Causal Effect Estimation with Latent Textual Treatments</a></h3>
-                <p class="meta">By Omri Feldman, Amar Venugopal</p>
-                <p class="text">Understanding the causal effects of text on downstream outcomes is a central task in many applications. Estimating such effects requires researchers to run controlled experiments that systematically vary textual features. While large language models (LLMs) hold promise for genera...</p>
-            </div>
-            
-            <div class="card nlp-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15716v1" target="_blank">Rethinking Metrics for Lexical Semantic Change Detection</a></h3>
-                <p class="meta">By Roksana Goworek, Haim Dubossarsky</p>
-                <p class="text">Lexical semantic change detection (LSCD) increasingly relies on contextualised language model embeddings, yet most approaches still quantify change using a small set of semantic change metrics, primarily Average Pairwise Distance (APD) and cosine distance over word prototypes (PR...</p>
-            </div>
-            
-            <div class="card nlp-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15689v1" target="_blank">A Content-Based Framework for Cybersecurity Refusal Decisions in Large Language Models</a></h3>
+                <h3><a href="http://arxiv.org/abs/2602.15689v1" target="_blank">⚡ A Content-Based Framework for Cybersecurity Refusal Decisions in Large Language Models</a></h3>
                 <p class="meta">By Meirav Segal, Noa Linder</p>
                 <p class="text">Large language models and LLM-based agents are increasingly used for cybersecurity tasks that are inherently dual-use. Existing approaches to refusal, spanning academic policy frameworks and commercially deployed systems, often rely on broad topic-based bans or offensive-focused ...</p>
             </div>
             
             <div class="card nlp-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15678v1" target="_blank">Revisiting Northrop Frye's Four Myths Theory with Large Language Models</a></h3>
-                <p class="meta">By Edirlei Soares de Lima, Marco A. Casanova</p>
-                <p class="text">Northrop Frye's theory of four fundamental narrative genres (comedy, romance, tragedy, satire) has profoundly influenced literary criticism, yet computational approaches to his framework have focused primarily on narrative patterns rather than character functions. In this paper, ...</p>
-            </div>
-            
-            <div class="card nlp-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15675v1" target="_blank">LLM-to-Speech: A Synthetic Data Pipeline for Training Dialectal Text-to-Speech Models</a></h3>
-                <p class="meta">By Ahmed Khaled Khamis, Hesham Ali</p>
-                <p class="text">Despite the advances in neural text to speech (TTS), many Arabic dialectal varieties remain marginally addressed, with most resources concentrated on Modern Spoken Arabic (MSA) and Gulf dialects, leaving Egyptian Arabic -- the most widely understood Arabic dialect -- severely und...</p>
-            </div>
-            
-            <div class="card nlp-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15620v1" target="_blank">STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens</a></h3>
+                <h3><a href="http://arxiv.org/abs/2602.15620v1" target="_blank">⚡ STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens</a></h3>
                 <p class="meta">By Shiqi Liu, Zeyu He</p>
                 <p class="text">Reinforcement Learning (RL) has significantly improved large language model reasoning, but existing RL fine-tuning methods rely heavily on heuristic techniques such as entropy regularization and reweighting to maintain stability. In practice, they often experience late-stage perf...</p>
             </div>
             
             <div class="card nlp-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15578v1" target="_blank">Clinically Inspired Symptom-Guided Depression Detection from Emotion-Aware Speech Representations</a></h3>
-                <p class="meta">By Chaithra Nerella, Chiranjeevi Yarra</p>
-                <p class="text">Depression manifests through a diverse set of symptoms such as sleep disturbance, loss of interest, and concentration difficulties. However, most existing works treat depression prediction either as a binary label or an overall severity score without explicitly modeling symptom-s...</p>
+                <h3><a href="http://arxiv.org/abs/2602.15564v1" target="_blank">⚡ Beyond Static Pipelines: Learning Dynamic Workflows for Text-to-SQL</a></h3>
+                <p class="meta">By Yihan Wang, Peiyu Liu</p>
+                <p class="text">Text-to-SQL has recently achieved impressive progress, yet remains difficult to apply effectively in real-world scenarios. This gap stems from the reliance on single static workflows, fundamentally limiting scalability to out-of-distribution and long-tail scenarios. Instead of re...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15449v1" target="_blank">⚡ TAROT: Test-driven and Capability-adaptive Curriculum Reinforcement Fine-tuning for Code Generation with Large Language Models</a></h3>
+                <p class="meta">By Chansung Park, Juyong Jiang</p>
+                <p class="text">Large Language Models (LLMs) are changing the coding paradigm, known as vibe coding, yet synthesizing algorithmically sophisticated and robust code still remains a critical challenge. Incentivizing the deep reasoning capabilities of LLMs is essential to overcoming this hurdle. Re...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15353v1" target="_blank">⚡ NeuroSymActive: Differentiable Neural-Symbolic Reasoning with Active Exploration for Knowledge Graph Question Answering</a></h3>
+                <p class="meta">By Rong Fu, Yang Li</p>
+                <p class="text">Large pretrained language models and neural reasoning systems have advanced many natural language tasks, yet they remain challenged by knowledge-intensive queries that require precise, structured multi-hop inference. Knowledge graphs provide a compact symbolic substrate for factu...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15313v1" target="_blank">⚡ Mnemis: Dual-Route Retrieval on Hierarchical Graphs for Long-Term LLM Memory</a></h3>
+                <p class="meta">By Zihao Tang, Xin Yu</p>
+                <p class="text">AI Memory, specifically how models organizes and retrieves historical messages, becomes increasingly valuable to Large Language Models (LLMs), yet existing methods (RAG and Graph-RAG) primarily retrieve memory through similarity-based mechanisms. While efficient, such System-1-st...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.15139v1" target="_blank">⚡ CGRA-DeBERTa Concept Guided Residual Augmentation Transformer for Theologically Islamic Understanding</a></h3>
+                <p class="meta">By Tahir Hussain, Saddam Hussain Khan</p>
+                <p class="text">Accurate QA over classical Islamic texts remains challenging due to domain specific semantics, long context dependencies, and concept sensitive reasoning. Therefore, a new CGRA DeBERTa, a concept guided residual domain augmentation transformer framework, is proposed that enhances...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.15005v1" target="_blank">⚡ Learning User Interests via Reasoning and Distillation for Cross-Domain News Recommendation</a></h3>
+                <p class="meta">By Mengdan Zhu, Yufan Zhao</p>
+                <p class="text">News recommendation plays a critical role in online news platforms by helping users discover relevant content. Cross-domain news recommendation further requires inferring user's underlying information needs from heterogeneous signals that often extend beyond direct news consumpti...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14917v1" target="_blank">⚡ BFS-PO: Best-First Search for Large Reasoning Models</a></h3>
+                <p class="meta">By Fiorenzo Parascandolo, Wenhui Tan</p>
+                <p class="text">Large Reasoning Models (LRMs) such as OpenAI o1 and DeepSeek-R1 have shown excellent performance in reasoning tasks using long reasoning chains. However, this has also led to a significant increase of computational costs and the generation of verbose output, a phenomenon known as...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14812v1" target="_blank">⚡ Physical Commonsense Reasoning for Lower-Resourced Languages and Dialects: a Study on Basque</a></h3>
+                <p class="meta">By Jaione Bengoetxea, Itziar Gonzalez-Dios</p>
+                <p class="text">Physical commonsense reasoning represents a fundamental capability of human intelligence, enabling individuals to understand their environment, predict future events, and navigate physical spaces. Recent years have witnessed growing interest in reasoning tasks within Natural Lang...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14763v1" target="_blank">⚡ Unlocking Reasoning Capability on Machine Translation in Large Language Models</a></h3>
+                <p class="meta">By Sara Rajaee, Sebastian Vincent</p>
+                <p class="text">Reasoning-oriented large language models (RLMs) achieve strong gains on tasks such as mathematics and coding by generating explicit intermediate reasoning. However, their impact on machine translation (MT) remains underexplored. We systematically evaluate several open- and closed...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14649v1" target="_blank">⚡ GradMAP: Faster Layer Pruning with Gradient Metric and Projection Compensation</a></h3>
+                <p class="meta">By Hao Liu, Guangyan Li</p>
+                <p class="text">Large Language Models (LLMs) exhibit strong reasoning abilities, but their high computational costs limit their practical deployment. Recent studies reveal significant redundancy in LLMs layers, making layer pruning an active research topic. Layer pruning research primarily focus...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14564v1" target="_blank">⚡ Assessing Large Language Models for Medical QA: Zero-Shot and LLM-as-a-Judge Evaluation</a></h3>
+                <p class="meta">By Shefayat E Shams Adib, Ahmed Alfey Sani</p>
+                <p class="text">Recently, Large Language Models (LLMs) have gained significant traction in medical domain, especially in developing a QA systems to Medical QA systems for enhancing access to healthcare in low-resourced settings. This paper compares five LLMs deployed between April 2024 and Augus...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14536v1" target="_blank">⚡ Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets</a></h3>
+                <p class="meta">By Yuchen Yang, Wenze Lin</p>
+                <p class="text">Large Language Models (LLMs) have seen remarkable advancements, achieving state-of-the-art results in diverse applications. Fine-tuning, an important step for adapting LLMs to specific downstream tasks, typically involves further training on corresponding datasets. However, a fun...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14517v1" target="_blank">⚡ Beyond Translation: Evaluating Mathematical Reasoning Capabilities of LLMs in Sinhala and Tamil</a></h3>
+                <p class="meta">By Sukumar Kishanthan, Kumar Thushalika</p>
+                <p class="text">Large language models (LLMs) demonstrate strong mathematical reasoning in English, but whether these capabilities reflect genuine multilingual reasoning or reliance on translation-based processing in low-resource languages like Sinhala and Tamil remains unclear. We examine this f...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14470v1" target="_blank">⚡ HyperRAG: Reasoning N-ary Facts over Hypergraphs for Retrieval Augmented Generation</a></h3>
+                <p class="meta">By Wen-Sheng Lien, Yu-Kai Chan</p>
+                <p class="text">Graph-based retrieval-augmented generation (RAG) methods, typically built on knowledge graphs (KGs) with binary relational facts, have shown promise in multi-hop open-domain QA. However, their rigid retrieval schemes and dense similarity search often introduce irrelevant context,...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14469v1" target="_blank">⚡ Measuring and Mitigating Post-hoc Rationalization in Reverse Chain-of-Thought Generation</a></h3>
+                <p class="meta">By Guangyue Peng, Zongchao Chen</p>
+                <p class="text">Reverse Chain-of-Thought Generation (RCG) synthesizes reasoning traces from query-answer pairs, but runs the risk of producing post-hoc rationalizations: when models can see the answer during generation, the answer serves as a cognitive anchor that shapes the entire explanation. ...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14428v1" target="_blank">⚡ LLM-Guided Knowledge Distillation for Temporal Knowledge Graph Reasoning</a></h3>
+                <p class="meta">By Wang Xing, Wei Song</p>
+                <p class="text">Temporal knowledge graphs (TKGs) support reasoning over time-evolving facts, yet state-of-the-art models are often computationally heavy and costly to deploy. Existing compression and distillation techniques are largely designed for static graphs; directly applying them to tempor...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14419v1" target="_blank">⚡ WavePhaseNet: A DFT-Based Method for Constructing Semantic Conceptual Hierarchy Structures (SCHS)</a></h3>
+                <p class="meta">By Kiyotaka Kasubuchi, Kazuo Fukiya</p>
+                <p class="text">This paper reformulates Transformer/Attention mechanisms in Large Language Models (LLMs) through measure theory and frequency analysis, theoretically demonstrating that hallucination is an inevitable structural limitation. The embedding space functions as a conditional expectatio...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14386v1" target="_blank">⚡ Beyond Token-Level Policy Gradients for Complex Reasoning with Large Language Models</a></h3>
+                <p class="meta">By Mufan Xu, Kehai Chen</p>
+                <p class="text">Existing policy-gradient methods for auto-regressive language models typically select subsequent tokens one at a time as actions in the policy. While effective for many generation tasks, such an approach may not fully capture the structure of complex reasoning tasks, where a sing...</p>
+            </div>
+            
+            <div class="card nlp-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14367v1" target="_blank">⚡ InnoEval: On Research Idea Evaluation as a Knowledge-Grounded, Multi-Perspective Reasoning Problem</a></h3>
+                <p class="meta">By Shuofei Qiao, Yunxiang Wei</p>
+                <p class="text">The rapid evolution of Large Language Models has catalyzed a surge in scientific idea production, yet this leap has not been accompanied by a matching advance in idea evaluation. The fundamental nature of scientific evaluation needs knowledgeable grounding, collective deliberatio...</p>
             </div>
             
             </div>
         </section>
         
         <section class="news-desk">
-            <h2 class="desk-title">VISION & MULTIMODAL DESK <span>SCROLL FOR MORE →</span></h2>
+            <h2 class="desk-title">VISION & MULTIMODAL DESK <span>133 PAPERS THIS WEEK</span></h2>
             <div class="horizontal-scroll">
                 
             <div class="card vision-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15819v1" target="_blank">VideoSketcher: Video Models Prior Enable Versatile Sequential Sketch Generation</a></h3>
+                <h3><a href="http://arxiv.org/abs/2602.15329v1" target="_blank">🔥 EventMemAgent: Hierarchical Event-Centric Memory for Online Video Understanding with Adaptive Tool Use</a></h3>
+                <p class="meta">By Siwei Wen, Zhangcheng Wang</p>
+                <p class="text">Online video understanding requires models to perform continuous perception and long-range reasoning within potentially infinite visual streams. Its fundamental challenge lies in the conflict between the unbounded nature of streaming media input and the limited context window of ...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14201v1" target="_blank">🔥 GeoEyes: On-Demand Visual Focusing for Evidence-Grounded Understanding of Ultra-High-Resolution Remote Sensing Imagery</a></h3>
+                <p class="meta">By Fengxiang Wang, Mingshuo Chen</p>
+                <p class="text">The "thinking-with-images" paradigm enables multimodal large language models (MLLMs) to actively explore visual scenes via zoom-in tools. This is essential for ultra-high-resolution (UHR) remote sensing VQA, where task-relevant cues are sparse and tiny. However, we observe a cons...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15819v1" target="_blank">⚡ VideoSketcher: Video Models Prior Enable Versatile Sequential Sketch Generation</a></h3>
                 <p class="meta">By Hui Ren, Yuval Alaluf</p>
                 <p class="text">Sketching is inherently a sequential process, in which strokes are drawn in a meaningful order to explore and refine ideas. However, most generative models treat sketches as static images, overlooking the temporal structure that underlies creative drawing. We present a data-effic...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15775v1" target="_blank">⚡ NeRFscopy: Neural Radiance Fields for in-vivo Time-Varying Tissues from Endoscopy</a></h3>
+                <p class="meta">By Laura Salort-Benejam, Antonio Agudo</p>
+                <p class="text">Endoscopy is essential in medical imaging, used for diagnosis, prognosis and treatment. Developing a robust dynamic 3D reconstruction pipeline for endoscopic videos could enhance visualization, improve diagnostic accuracy, aid in treatment planning, and guide surgery procedures. ...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15724v1" target="_blank">⚡ Learning to Retrieve Navigable Candidates for Efficient Vision-and-Language Navigation</a></h3>
+                <p class="meta">By Shutian Gu, Chengkai Huang</p>
+                <p class="text">Vision-and-Language Navigation (VLN) requires an agent to follow natural-language instructions and navigate through previously unseen environments. Recent approaches increasingly employ large language models (LLMs) as high-level navigators due to their flexibility and reasoning c...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15556v1" target="_blank">⚡ Revealing and Enhancing Core Visual Regions: Harnessing Internal Attention Dynamics for Hallucination Mitigation in LVLMs</a></h3>
+                <p class="meta">By Guangtao Lyu, Qi Liu</p>
+                <p class="text">LVLMs have achieved strong multimodal reasoning capabilities but remain prone to hallucinations, producing outputs inconsistent with visual inputs or user instructions. Existing training-free methods, including contrastive decoding and auxiliary expert models, which incur several...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-17</div>
+                <h3><a href="http://arxiv.org/abs/2602.15461v1" target="_blank">⚡ Emergent Morphing Attack Detection in Open Multi-modal Large Language Models</a></h3>
+                <p class="meta">By Marija Ivanovska, Vitomir Štruc</p>
+                <p class="text">Face morphing attacks threaten biometric verification, yet most morphing attack detection (MAD) systems require task-specific training and generalize poorly to unseen attack types. Meanwhile, open-source multimodal large language models (MLLMs) have demonstrated strong visual-lin...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14989v1" target="_blank">⚡ ThermEval: A Structured Benchmark for Evaluation of Vision-Language Models on Thermal Imagery</a></h3>
+                <p class="meta">By Ayush Shrivastava, Kirtan Gangani</p>
+                <p class="text">Vision language models (VLMs) achieve strong performance on RGB imagery, but they do not generalize to thermal images. Thermal sensing plays a critical role in settings where visible light fails, including nighttime surveillance, search and rescue, autonomous driving, and medical...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14771v1" target="_blank">⚡ GOT-JEPA: Generic Object Tracking with Model Adaptation and Occlusion Handling using Joint-Embedding Predictive Architecture</a></h3>
+                <p class="meta">By Shih-Fang Chen, Jun-Cheng Chen</p>
+                <p class="text">The human visual system tracks objects by integrating current observations with previously observed information, adapting to target and scene changes, and reasoning about occlusion at fine granularity. In contrast, recent generic object trackers are often optimized for training t...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14577v1" target="_blank">⚡ DriveFine: Refining-Augmented Masked Diffusion VLA for Precise and Robust Driving</a></h3>
+                <p class="meta">By Chenxu Dang, Sining Ang</p>
+                <p class="text">Vision-Language-Action (VLA) models for autonomous driving increasingly adopt generative planners trained with imitation learning followed by reinforcement learning. Diffusion-based planners suffer from modality alignment difficulties, low training efficiency, and limited general...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14534v1" target="_blank">⚡ MoRL: Reinforced Reasoning for Unified Motion Understanding and Generation</a></h3>
+                <p class="meta">By Hongpeng Wang, Zeyu Zhang</p>
+                <p class="text">Human motion understanding and generation are crucial for vision and robotics but remain limited in reasoning capability and test-time planning. We propose MoRL, a unified multimodal motion model trained with supervised fine-tuning and reinforcement learning with verifiable rewar...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14482v1" target="_blank">⚡ TikArt: Aperture-Guided Observation for Fine-Grained Visual Reasoning via Reinforcement Learning</a></h3>
+                <p class="meta">By Hao Ding, Zhichuan Yang</p>
+                <p class="text">We address fine-grained visual reasoning in multimodal large language models (MLLMs), where key evidence may reside in tiny objects, cluttered regions, or subtle markings that are lost under a single global image encoding. We introduce TikArt (Thinking Aperture), an aperture-guid...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14441v1" target="_blank">⚡ D-SECURE: Dual-Source Evidence Combination for Unified Reasoning in Misinformation Detection</a></h3>
+                <p class="meta">By Gagandeep Singh, Samudi Amarasinghe</p>
+                <p class="text">Multimodal misinformation increasingly mixes realistic im-age edits with fluent but misleading text, producing persuasive posts that are difficult to verify. Existing systems usually rely on a single evidence source. Content-based detectors identify local inconsistencies within a...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-16</div>
+                <h3><a href="http://arxiv.org/abs/2602.14409v1" target="_blank">⚡ Learning Proposes, Geometry Disposes: A Modular Framework for Efficient Spatial Reasoning</a></h3>
+                <p class="meta">By Haichao Zhu, Zhaorui Yang</p>
+                <p class="text">Spatial perception aims to estimate camera motion and scene structure from visual observations, a problem traditionally addressed through geometric modeling and physical consistency constraints. Recent learning-based methods have demonstrated strong representational capacity for ...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.15072v1" target="_blank">⚡ GRAFNet: Multiscale Retinal Processing via Guided Cortical Attention Feedback for Enhancing Medical Image Polyp Segmentation</a></h3>
+                <p class="meta">By Abdul Joseph Fofanah, Lian Wen</p>
+                <p class="text">Accurate polyp segmentation in colonoscopy is essential for cancer prevention but remains challenging due to: (1) high morphological variability (from flat to protruding lesions), (2) strong visual similarity to normal structures such as folds and vessels, and (3) the need for ro...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14186v1" target="_blank">⚡ UniRef-Image-Edit: Towards Scalable and Consistent Multi-Reference Image Editing</a></h3>
+                <p class="meta">By Hongyang Wei, Bin Wen</p>
+                <p class="text">We present UniRef-Image-Edit, a high-performance multi-modal generation system that unifies single-image editing and multi-image composition within a single framework. Existing diffusion-based editing methods often struggle to maintain consistency across multiple conditions due t...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14153v1" target="_blank">⚡ ARport: An Augmented Reality System for Markerless Image-Guided Port Placement in Robotic Surgery</a></h3>
+                <p class="meta">By Zheng Han, Zixin Yang</p>
+                <p class="text">Purpose: Precise port placement is a critical step in robot-assisted surgery, where port configuration influences both visual access to the operative field and instrument maneuverability. To bridge the gap between preoperative planning and intraoperative execution, we present ARp...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14147v1" target="_blank">⚡ LaViDa-R1: Advancing Reasoning for Unified Multimodal Diffusion Language Models</a></h3>
+                <p class="meta">By Shufan Li, Yuchen Zhu</p>
+                <p class="text">Diffusion language models (dLLMs) recently emerged as a promising alternative to auto-regressive LLMs. The latest works further extended it to multimodal understanding and generation tasks. In this work, we propose LaViDa-R1, a multimodal, general-purpose reasoning dLLM. Unlike e...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14122v1" target="_blank">⚡ EgoSound: Benchmarking Sound Understanding in Egocentric Videos</a></h3>
+                <p class="meta">By Bingwen Zhu, Yuqian Fu</p>
+                <p class="text">Multimodal Large Language Models (MLLMs) have recently achieved remarkable progress in vision-language understanding. Yet, human perception is inherently multisensory, integrating sight, sound, and motion to reason about the world. Among these modalities, sound provides indispens...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14098v1" target="_blank">⚡ ForgeryVCR: Visual-Centric Reasoning via Efficient Forensic Tools in MLLMs for Image Forgery Detection and Localization</a></h3>
+                <p class="meta">By Youqi Wang, Shen Chen</p>
+                <p class="text">Existing Multimodal Large Language Models (MLLMs) for image forgery detection and localization predominantly operate under a text-centric Chain-of-Thought (CoT) paradigm. However, forcing these models to textually characterize imperceptible low-level tampering traces inevitably l...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-15</div>
+                <h3><a href="http://arxiv.org/abs/2602.14068v1" target="_blank">⚡ CoCoEdit: Content-Consistent Image Editing via Region Regularized Reinforcement Learning</a></h3>
+                <p class="meta">By Yuhui Wu, Chenxi Xie</p>
+                <p class="text">Image editing has achieved impressive results with the development of large-scale generative models. However, existing models mainly focus on the editing effects of intended objects and regions, often leading to unwanted changes in unintended regions. We present a post-training f...</p>
+            </div>
+            
+            <div class="card vision-accent">
+                <div class="card-date">2026-02-14</div>
+                <h3><a href="http://arxiv.org/abs/2602.13823v1" target="_blank">⚡ Embed-RL: Reinforcement Learning for Reasoning-Driven Multimodal Embeddings</a></h3>
+                <p class="meta">By Haonan Jiang, Yuji Wang</p>
+                <p class="text">Leveraging Multimodal Large Language Models (MLLMs) has become pivotal for advancing Universal Multimodal Embeddings (UME) in addressing diverse cross-modal tasks. Recent studies demonstrate that incorporating generative Chain-of-Thought (CoT) reasoning can substantially enhance ...</p>
             </div>
             
             <div class="card vision-accent">
@@ -304,13 +677,6 @@
                 <h3><a href="http://arxiv.org/abs/2602.15782v1" target="_blank">Meteorological data and Sky Images meets Neural Models for Photovoltaic Power Forecasting</a></h3>
                 <p class="meta">By Ines Montoya-Espinagosa, Antonio Agudo</p>
                 <p class="text">Due to the rise in the use of renewable energies as an alternative to traditional ones, and especially solar energy, there is increasing interest in studying how to address photovoltaic forecasting in the face of the challenge of variability in photovoltaic energy production, usi...</p>
-            </div>
-            
-            <div class="card vision-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15775v1" target="_blank">NeRFscopy: Neural Radiance Fields for in-vivo Time-Varying Tissues from Endoscopy</a></h3>
-                <p class="meta">By Laura Salort-Benejam, Antonio Agudo</p>
-                <p class="text">Endoscopy is essential in medical imaging, used for diagnosis, prognosis and treatment. Developing a robust dynamic 3D reconstruction pipeline for endoscopic videos could enhance visualization, improve diagnostic accuracy, aid in treatment planning, and guide surgery procedures. ...</p>
             </div>
             
             <div class="card vision-accent">
@@ -343,44 +709,9 @@
             
             <div class="card vision-accent">
                 <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15724v1" target="_blank">Learning to Retrieve Navigable Candidates for Efficient Vision-and-Language Navigation</a></h3>
-                <p class="meta">By Shutian Gu, Chengkai Huang</p>
-                <p class="text">Vision-and-Language Navigation (VLN) requires an agent to follow natural-language instructions and navigate through previously unseen environments. Recent approaches increasingly employ large language models (LLMs) as high-level navigators due to their flexibility and reasoning c...</p>
-            </div>
-            
-            <div class="card vision-accent">
-                <div class="card-date">2026-02-17</div>
                 <h3><a href="http://arxiv.org/abs/2602.15720v1" target="_blank">ToaSt: Token Channel Selection and Structured Pruning for Efficient ViT</a></h3>
                 <p class="meta">By Hyunchan Moon, Cheonjun Park</p>
                 <p class="text">Vision Transformers (ViTs) have achieved remarkable success across various vision tasks, yet their deployment is often hindered by prohibitive computational costs. While structured weight pruning and token compression have emerged as promising solutions, they suffer from prolonge...</p>
-            </div>
-            
-            <div class="card vision-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15712v1" target="_blank">Criteria-first, semantics-later: reproducible structure discovery in image-based sciences</a></h3>
-                <p class="meta">By Jan Bumberger</p>
-                <p class="text">Across the natural and life sciences, images have become a primary measurement modality, yet the dominant analytic paradigm remains semantics-first. Structure is recovered by predicting or enforcing domain-specific labels. This paradigm fails systematically under the conditions t...</p>
-            </div>
-            
-            <div class="card vision-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15660v1" target="_blank">Bayesian Optimization for Design Parameters of 3D Image Data Analysis</a></h3>
-                <p class="meta">By David Exler, Joaquin Eduardo Urrutia Gómez</p>
-                <p class="text">Deep learning-based segmentation and classification are crucial to large-scale biomedical imaging, particularly for 3D data, where manual analysis is impractical. Although many methods exist, selecting suitable models and tuning parameters remains a major bottleneck in practice. ...</p>
-            </div>
-            
-            <div class="card vision-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15656v1" target="_blank">A Novel Public Dataset for Strawberry (Fragaria x ananassa) Ripeness Detection and Comparative Evaluation of YOLO-Based Models</a></h3>
-                <p class="meta">By Mustafa Yurdakul, Zeynep Sena Bastug</p>
-                <p class="text">The strawberry (Fragaria x ananassa), known worldwide for its economic value and nutritional richness, is a widely cultivated fruit. Determining the correct ripeness level during the harvest period is crucial for both preventing losses for producers and ensuring consumers receive...</p>
-            </div>
-            
-            <div class="card vision-accent">
-                <div class="card-date">2026-02-17</div>
-                <h3><a href="http://arxiv.org/abs/2602.15650v1" target="_blank">Concept-Enhanced Multimodal RAG: Towards Interpretable and Accurate Radiology Report Generation</a></h3>
-                <p class="meta">By Marco Salmè, Federico Siciliano</p>
-                <p class="text">Radiology Report Generation (RRG) through Vision-Language Models (VLMs) promises to reduce documentation burden, improve reporting consistency, and accelerate clinical workflows. However, their clinical adoption remains limited by the lack of interpretability and the tendency to ...</p>
             </div>
             
             </div>

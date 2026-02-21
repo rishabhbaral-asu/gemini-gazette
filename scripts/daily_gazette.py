@@ -5,24 +5,16 @@ from bs4 import BeautifulSoup
 
 def fetch_arxiv_research():
     # 1. DATE CALCULATION (Last 7 Days)
-    today = datetime.datetime.now()
+    # Using UTC because ArXiv timestamps are in UTC
+    today = datetime.datetime.now(datetime.timezone.utc)
     seven_days_ago = today - datetime.timedelta(days=7)
     
-    # ArXiv expects format: YYYYMMDDHHMM
-    date_format = "%Y%m%d0000"
-    start_str = seven_days_ago.strftime(date_format)
-    end_str = today.strftime(date_format)
-    
-    print(f"🔬 Scoping papers from {seven_days_ago.strftime('%Y-%m-%d')} to {today.strftime('%Y-%m-%d')}...")
+    print(f"🔬 Fetching recent papers and filtering for the last 7 days...")
     
     # 2. QUERY CONSTRUCTION
-    # We fetch more results (500) to ensure we cover the full week of high-volume categories
-    # Query: (Categories) AND (Date Range)
+    # Notice: NO date in the URL anymore! Just grabbing the newest 500 papers.
     base_query = "cat:cs.AI+OR+cat:cs.CL+OR+cat:cs.CV"
-    date_query = f"submittedDate:[{start_str}+TO+{end_str}]"
-    final_query = f"({base_query})+AND+{date_query}"
-    
-    url = f"https://export.arxiv.org/api/query?search_query={final_query}&sortBy=submittedDate&sortOrder=descending&max_results=500"
+    url = f"https://export.arxiv.org/api/query?search_query={base_query}&sortBy=submittedDate&sortOrder=descending&max_results=500"
     
     headers = {'User-Agent': 'Mozilla/5.0'}
     sections = {'AI & REINFORCEMENT': [], 'NLP & LANGUAGE': [], 'VISION & MULTIMODAL': []}
@@ -32,9 +24,17 @@ def fetch_arxiv_research():
         soup = BeautifulSoup(res.content, 'xml')
         entries = soup.find_all('entry')
         
-        print(f"   ↳ Found {len(entries)} papers. sorting by priority...")
+        print(f"   ↳ Fetched {len(entries)} papers from ArXiv. Filtering by date and priority...")
 
         for entry in entries:
+            # Parse the exact published date from the XML
+            published_str = entry.published.text
+            published_date = datetime.datetime.strptime(published_str, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)
+            
+            # If the paper is older than 7 days, skip it and don't add it to the website
+            if published_date < seven_days_ago:
+                continue
+
             primary_cat = entry.find('arxiv:primary_category')['term']
             title = entry.title.text.strip().replace('\n', ' ')
             summary = entry.summary.text.strip().replace('\n', ' ')
@@ -44,7 +44,7 @@ def fetch_arxiv_research():
                 'summary': summary,
                 'link': entry.id.text.strip(),
                 'authors': [a.find('name').text for a in entry.find_all('author')][:2],
-                'date': entry.published.text[:10],
+                'date': published_date.strftime('%Y-%m-%d'),
                 'priority_score': calculate_priority(title, summary)
             }
             

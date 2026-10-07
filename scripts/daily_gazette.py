@@ -78,29 +78,60 @@ TOPIC_KEYWORDS = {
         "access control",
     ],
 
-    "POLICY FOLLOWING": [
-        "policy following",
-        "policy adherence",
-        "policy compliance",
-        "instruction following",
-        "instruction hierarchy",
-        "instruction adherence",
-        "constraint following",
-        "constraint satisfaction",
-        "rule following",
-        "rule adherence",
-        "behavioral policy",
-        "safety policy",
-        "system prompt",
-        "system instruction",
-        "prompt injection",
-        "jailbreak",
-        "jailbreaking",
-        "alignment",
-        "aligned behavior",
-        "refusal",
-        "safety alignment",
-    ],
+    "POLICY FOLLOWING": {
+        # Agent/tool-use context: policy following here means the kind of
+        # domain-policy compliance evaluated by tau-bench-style benchmarks.
+        "agent": [
+            "agent",
+            "agents",
+            "agentic",
+            "interactive agent",
+            "tool use",
+            "tool-use",
+            "tool using",
+            "tool-using",
+            "tool calling",
+            "customer service agent",
+            "customer support agent",
+            "user-facing agent",
+        ],
+        "policy": [
+            "policy following",
+            "policy-following",
+            "policy adherence",
+            "policy compliance",
+            "policy violation",
+            "policy violations",
+            "rule following",
+            "rule-following",
+            "rule adherence",
+            "rule compliance",
+            "instruction hierarchy",
+            "instruction adherence",
+            "constraint following",
+            "constraint adherence",
+            "procedural constraint",
+            "procedural constraints",
+            "business rule",
+            "business rules",
+            "domain policy",
+            "domain policies",
+            "action constraint",
+            "action constraints",
+            "tool-use policy",
+            "tool use policy",
+            "tool-use constraints",
+            "tool use constraints",
+        ],
+        "benchmarks": [
+            "tau-bench",
+            "taubench",
+            "tau2-bench",
+            "tau 2 bench",
+            "tau-bench retail",
+            "tau-bench airline",
+        ],
+    },
 }
 
 
@@ -164,9 +195,18 @@ def classify_topics(title, summary):
     # Policy Following
     # --------------------------------------------------------
 
-    if contains_keyword(
-        text,
-        TOPIC_KEYWORDS["POLICY FOLLOWING"]
+    policy_agent_terms = TOPIC_KEYWORDS["POLICY FOLLOWING"]["agent"]
+    policy_terms = TOPIC_KEYWORDS["POLICY FOLLOWING"]["policy"]
+    policy_benchmarks = TOPIC_KEYWORDS["POLICY FOLLOWING"]["benchmarks"]
+
+    # Named tau-bench-family benchmarks are direct evidence. Otherwise,
+    # require BOTH an agent/tool-use context and a policy/rule constraint.
+    # This avoids pulling in generic RL-policy or broad alignment papers.
+    if contains_keyword(text, policy_benchmarks):
+        topics.append("POLICY FOLLOWING")
+    elif (
+        contains_keyword(text, policy_agent_terms)
+        and contains_keyword(text, policy_terms)
     ):
         topics.append("POLICY FOLLOWING")
 
@@ -270,19 +310,19 @@ def calculate_priority(title, summary):
     # Policy Following
     # --------------------------------------------------------
 
-    strong_policy_signals = [
-        "policy following",
-        "policy adherence",
-        "policy compliance",
-        "instruction hierarchy",
-        "instruction following",
-        "instruction adherence",
-        "constraint following",
-        "rule following",
-        "safety policy",
-    ]
+    policy_agent_terms = TOPIC_KEYWORDS["POLICY FOLLOWING"]["agent"]
+    policy_terms = TOPIC_KEYWORDS["POLICY FOLLOWING"]["policy"]
+    policy_benchmarks = TOPIC_KEYWORDS["POLICY FOLLOWING"]["benchmarks"]
 
-    if contains_keyword(text, strong_policy_signals):
+    # Strongly prioritize explicit tau-bench-family work. For other papers,
+    # only boost policy-following relevance when agent/tool-use and
+    # policy/rule-compliance signals occur together.
+    if contains_keyword(text, policy_benchmarks):
+        score += 12
+    elif (
+        contains_keyword(text, policy_agent_terms)
+        and contains_keyword(text, policy_terms)
+    ):
         score += 8
 
     return score

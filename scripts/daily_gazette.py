@@ -1,4 +1,3 @@
-```python
 import requests
 import datetime
 from bs4 import BeautifulSoup
@@ -1013,4 +1012,3 @@ if __name__ == "__main__":
     data = fetch_arxiv_research()
 
     publish_sectioned_gazette(data)
-```
